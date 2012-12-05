@@ -3,11 +3,11 @@ package bicicleta;
 public class Bicicleta 
 {
 	//numero de piñones y platos que tiene la bicicleta
-	protected int numpiñon ;
+	protected int numpinon ;
 	protected int numplato ;
 	
 	//el numero actual del piñon y plato
-	protected int piñonact = 1;
+	protected int pinonact = 1;
 	protected int platoact = 1;
 	
 	//los radios que tiene cada plato y piñon
@@ -16,28 +16,28 @@ public class Bicicleta
 	
 	//este metodo cambia el piñon, donde piñonact , es el piñon actual usado, accion 
 	// es si queremos aumentar o disminuir este y numpiñon es el piñon maximo
-	public void setPiñon(char accion)
+	public void setPinon(char accion)
 	{
 		//aumentamos el piñon
 		if (accion == 'a')
 		{
-			if ( piñonact < numpiñon)
+			if ( pinonact < numpinon)
 			{
-				piñonact++;
+				pinonact++;
 			}
 		}
 		//disminuimos el piñon
 		if (accion == 'd')
 		{
-			if ( piñonact > 1)
+			if ( pinonact > 1)
 			{
-				piñonact--;
+				pinonact--;
 			}
 		}
 	}
-	public int getPiñon()
+	public int getPinon()
 	{
-		return piñonact;
+		return pinonact;
 	}
 	
 	public void setPlato(char accion)
@@ -61,6 +61,6 @@ public class Bicicleta
 	}
 	public int getPlato()
 	{
-		return piñonact;
+		return pinonact;
 	}	
 }
