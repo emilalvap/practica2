@@ -12,7 +12,7 @@ public class Bicicleta
 	
 	//los radios que tiene cada plato y piñon
 	protected float radioplato [];
-	protected float radiopiñon [];
+	protected float radiopinon [];
 	
 	//este metodo cambia el piñon, donde piñonact , es el piñon actual usado, accion 
 	// es si queremos aumentar o disminuir este y numpiñon es el piñon maximo
