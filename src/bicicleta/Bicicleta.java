@@ -3,7 +3,7 @@ package bicicleta;
 public class Bicicleta 
 {
 	
-	
+	//pruebagit
 	//el numero actual del piñon y plato activos
 	protected int pinonact = 1;
 	protected int platoact = 1;
