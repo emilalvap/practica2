@@ -17,8 +17,7 @@ public class Bicicleta extends Vehiculo
 	protected int dientespinon [];
 	
 
-	//este metodo cambia el piñon, donde piñonact , efloats el piñon actual usado, accion 
-	// es si queremos aumentar o disminuir este y numpiñon es el piñon maximo
+
 	
 	public void Bicicleta(int numeropinones, int numeroplatos)
 	{
@@ -31,17 +30,28 @@ public class Bicicleta extends Vehiculo
 	
 	
 	
-	
+	/**
+	 * devuelve el numero de pedales
+	 * @return
+	 */
 	public int getPedales ()
 	{
 		return numpedales ;
 	}
 	
+	/**
+	 * devuelve el pinon activo
+	 * @return
+	 */
 	public int getPinon()
 	{
 		return pinonact;
 	}
 	
+	/**
+	 * devuelve el plato activo
+	 * @return
+	 */
 	public int getPlato()
 	{
 		return pinonact;
@@ -86,11 +96,19 @@ public class Bicicleta extends Vehiculo
 		}
 	}
 	
+	/**
+	 * sirve para asignar el numero de pedales
+	 * @param numero
+	 */
 	public void setPedales (int numero)
 	{
 		numpedales = numero;
 	}
 	
+	/**
+	 * sirve para aumentar o disminuir el piñon que se quiere usar
+	 * @param accion 'a' = aumentar , 'd' = disminuir
+	 */
 	public void setPinon(char accion)
 	{
 		//aumentamos el piñon
@@ -111,6 +129,10 @@ public class Bicicleta extends Vehiculo
 		}
 	}
 	
+	/**
+	 * sirve para aumentar o disminuir el plato que se quiere usar
+	 * @param accion 'a' = aumentar , 'd' = disminuir
+	 */
 	public void setPlato(char accion)
 	{
 		//aumentamos el piñon

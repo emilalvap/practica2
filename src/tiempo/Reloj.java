@@ -26,7 +26,7 @@ public class Reloj {
 		tiempo = devuelveTiempo();
 		System.out.println("hora "+ tiempo[2] + " minuto " + tiempo[1] + " segundo " + tiempo[0]);
 	}
-	//devuelve un array con los segundos , minutos y horas cronometradas actuales
+
 	
 	/**
 	 * este metodo devuelve el tiempo actual en un array , el cual contiene en
@@ -42,6 +42,10 @@ public class Reloj {
 		return tiempo;
 	}
 	
+	/**
+	 * devuelve el tiempo actual en segundos
+	 * @return 
+	 */
 	public int devuelveSegundos ()
 	{
 		int segundos = 0;

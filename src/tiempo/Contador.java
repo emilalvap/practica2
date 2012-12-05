@@ -5,8 +5,8 @@ public class Contador{
 	int unidad = 0;
 	/**
 	 * este metodo devuelve 1 si la unidad es igual al limite y 0 si no lo es
-	 * @param limite
-	 * @return
+	 * @param limite que se quiere establecer
+	 * @return 1 cuando se alcanza el limite
 	 */
 	public int pasoUnidad (int limite)
 	{
