@@ -4,8 +4,9 @@ public class Bicicleta extends Vehiculo
 {
 	
 	//almacena el numero de pedales, ya que puede haber tandems
-	protected int numpedales;
+	protected int numpedales = 2;
 	
+	protected int numsillin = 1;
 	//el numero actual del piñon y plato activos
 	
 	protected int pinonact = 1;
