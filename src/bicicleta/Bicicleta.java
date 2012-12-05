@@ -1,9 +1,11 @@
 package bicicleta;
 
-public class Bicicleta extends VehiculoDosRuedas 
+public class Bicicleta extends Vehiculo
 {
 	
-	//pruebagit
+	//almacena el numero de pedales, ya que puede haber tandems
+	protected int numpedales;
+	
 	//el numero actual del piñon y plato activos
 	
 	protected int pinonact = 1;
@@ -23,6 +25,29 @@ public class Bicicleta extends VehiculoDosRuedas
 		dientesplato  = new int[numeroplatos];
 		dientespinon  = new int[numeropinones];
 	}
+	
+	
+	
+	public int getPedales ()
+	{
+		return numpedales ;
+	}
+	
+	public int getPinon()
+	{
+		return pinonact;
+	}
+	
+	public int getPlato()
+	{
+		return pinonact;
+	}
+	
+	public void setPedales (int numero)
+	{
+		numpedales = numero;
+	}
+	
 	public void setPinon(char accion)
 	{
 		//aumentamos el piñon
@@ -41,10 +66,6 @@ public class Bicicleta extends VehiculoDosRuedas
 				pinonact--;
 			}
 		}
-	}
-	public int getPinon()
-	{
-		return pinonact;
 	}
 	
 	public void setPlato(char accion)
@@ -67,8 +88,5 @@ public class Bicicleta extends VehiculoDosRuedas
 		}
 	}
 	
-	public int getPlato()
-	{
-		return pinonact;
-	}	
+		
 }
