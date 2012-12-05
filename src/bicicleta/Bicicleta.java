@@ -57,7 +57,7 @@ public class Bicicleta
 			}
 		}
 	}
-	public pruebagit()
+	public void pruebagit()
 	{
 		
 	}
