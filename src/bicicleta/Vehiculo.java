@@ -4,11 +4,20 @@ public class Vehiculo
 {
 	protected float velocidad;
 	protected int numruedas;
+	protected int direccion;
 	
 	/**
 	 * este metodo asigna una velocidad a la variable de clase velocidad
 	 * @param v
 	 */
+	public void setDireccion(int d)
+	{
+		direccion = d;
+	}
+	public float getDireccion()
+	{
+		return direccion;
+	}
 	public void setVelocidad(float v)
 	{
 		velocidad = v;
