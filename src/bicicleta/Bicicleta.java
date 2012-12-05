@@ -57,10 +57,7 @@ public class Bicicleta
 			}
 		}
 	}
-	public void pruebagit()
-	{
-		
-	}
+	
 	public int getPlato()
 	{
 		return pinonact;
