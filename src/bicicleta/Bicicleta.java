@@ -1,6 +1,6 @@
 package bicicleta;
 
-public class Bicicleta 
+public class Bicicleta extends VehiculoDosRuedas 
 {
 	
 	//pruebagit
@@ -13,12 +13,13 @@ public class Bicicleta
 	protected int dientesplato [];
 	protected int dientespinon [];
 	
-	//este metodo cambia el piñon, donde piñonact , es el piñon actual usado, accion 
+
+	//este metodo cambia el piñon, donde piñonact , efloats el piñon actual usado, accion 
 	// es si queremos aumentar o disminuir este y numpiñon es el piñon maximo
 	
 	public void Bicicleta(int numeropinones, int numeroplatos)
 	{
-		
+	
 		dientesplato  = new int[numeroplatos];
 		dientespinon  = new int[numeropinones];
 	}
