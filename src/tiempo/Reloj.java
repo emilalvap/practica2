@@ -3,9 +3,9 @@ package tiempo;
 public class Reloj {
 	
 	Milisegundo m = new Milisegundo();
-	UnidadTiempo segundo = new UnidadTiempo();
-	UnidadTiempo minuto = new UnidadTiempo();
-	UnidadTiempo hora = new UnidadTiempo();
+	Contador segundo = new Contador();
+	Contador minuto = new Contador();
+	Contador hora = new Contador();
 	
 	/**
 	 * este metodo realiza la operacion de ir incrementando segundos, minutos y horas
@@ -40,5 +40,12 @@ public class Reloj {
 		tiempo[1] = minuto.getUnidad();
 		tiempo[2] = hora.getUnidad();
 		return tiempo;
+	}
+	
+	public int devuelveSegundos ()
+	{
+		int segundos = 0;
+		segundos = segundo.getUnidad() + minuto.getUnidad() * 60 + hora.getUnidad() * 3600 ;
+		return segundos;
 	}
 }

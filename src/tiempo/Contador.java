@@ -1,6 +1,6 @@
 package tiempo;
 
-public class UnidadTiempo{
+public class Contador{
 
 	int unidad = 0;
 	/**
