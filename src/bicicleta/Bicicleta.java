@@ -5,7 +5,7 @@ public class Bicicleta extends Vehiculo
 	
 	//almacena el numero de pedales, ya que puede haber tandems
 	protected int numpedales = 2;
-	
+	protected float peso = 0;
 	protected int numsillin = 1;
 	//el numero actual del piñon y plato activos
 	
@@ -39,6 +39,14 @@ public class Bicicleta extends Vehiculo
 		return numpedales ;
 	}
 	
+	/**
+	 * devuelve el peso 
+	 * @return
+	 */
+	public float getPeso()
+	{
+		return peso;
+	}
 	/**
 	 * devuelve el pinon activo
 	 * @return
@@ -105,6 +113,13 @@ public class Bicicleta extends Vehiculo
 		numpedales = numero;
 	}
 	
+	/**este metodo asigna un peso 
+	 * 
+	 */
+	public void setPeso (float pesos)
+	{
+		peso = pesos;
+	}
 	/**
 	 * sirve para aumentar o disminuir el piñon que se quiere usar
 	 * @param accion 'a' = aumentar , 'd' = disminuir
