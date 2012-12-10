@@ -19,7 +19,7 @@ public class Bicicleta extends Vehiculo
 	
 	//Cada pedalada, la rueda de traccion, arrastrada por el pinon, recorrera un espacio que
 	//dependera
-	//de la relación plato / pinon
+	//de la relaciï¿½n plato / pinon
 	protected double relaciontransmision;
 		
 	//y del radio de la rueda

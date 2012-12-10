@@ -29,12 +29,13 @@ public class Principal
 		lista.add(reloj);
 		lista.add(ciclista);
 		
-		
+		while(true)
+		{
 			for (InterfaceMain c: lista)
 			{
 				c.ejecuta();
 			}
-		
+		}
 		
 		//Milisegundo mil = new Milisegundo();
 		//System.out.print(mil.cuentaMilisegundos());

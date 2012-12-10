@@ -11,11 +11,17 @@ public class Ciclista extends Persona
 	 */
 	
 	
+	//envia una cadencia de pedaleo a la bicicleta que esta transformara a movimiento
 	public void pedalear ()
 	{
 		
 	}
-
+	
+	//asigna un rumbo que se enviara a la bicicleta
+	public void setRumbo(int d)
+	{
+		
+	}
 	@Override
 	public void ejecuta() {
 		// TODO Auto-generated method stub

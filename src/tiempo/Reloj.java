@@ -4,7 +4,7 @@ import interfaceMain.InterfaceMain;
 
 
 
-public class Reloj extends Contador
+public class Reloj implements InterfaceMain
 {
 	
 	Milisegundo m = new Milisegundo();
