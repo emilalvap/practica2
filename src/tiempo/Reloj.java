@@ -60,9 +60,8 @@ public class Reloj extends Contador
 	
 	public void ejecuta() {
 		
-		segundo.incremento(m.devuelveSegundo());
-		minuto.incremento(segundo.pasoUnidad(60));
-		hora.incremento(minuto.pasoUnidad(60));
+		cuentaReloj();
+		mostrarReloj();
 	}
 	
 	
