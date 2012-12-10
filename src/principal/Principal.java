@@ -1,9 +1,6 @@
 package principal;
 
 
-
-
-
 import interfaceMain.InterfaceMain;
 
 import java.util.ArrayList;
