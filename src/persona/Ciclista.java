@@ -9,9 +9,17 @@ public class Ciclista extends Persona
 	 Vfinal = V inicial + a * t
 	 cadencia = (pedaleo/minuto) * (plato/piñon) = 2 * pi * R
 	 */
+	
+	
 	public void pedalear ()
 	{
 		
 	}
 
+	@Override
+	public void ejecuta() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

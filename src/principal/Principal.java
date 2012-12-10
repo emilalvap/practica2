@@ -7,8 +7,7 @@ package principal;
 import interfaceMain.InterfaceMain;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+
 
 import bicicleta.Bicicleta;
 
@@ -21,13 +20,15 @@ public class Principal
 	{
 	
 		
-		ArrayList<InterfaceMain> a=new ArrayList<InterfaceMain>();
+		ArrayList<InterfaceMain> lista=new ArrayList<InterfaceMain>();
 		
-		Bicicleta b= new Bicicleta(1, 1, 1);
+		Bicicleta bici1= new Bicicleta(1, 1, 1);
+		Reloj reloj= new Reloj();
 		
-		a.add(b);
+		lista.add(bici1);
+		lista.add(reloj);
 		
-		for (InterfaceMain c: a)
+		for (InterfaceMain c: lista)
 		{
 			c.ejecuta();
 		}
