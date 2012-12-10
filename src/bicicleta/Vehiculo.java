@@ -1,8 +1,8 @@
 package bicicleta;
 
-import interfacePrincipal.InterfacePrincipal;
 
-public class Vehiculo extends InterfacePrincipal
+
+public class Vehiculo 
 {
 	protected float velocidad;
 	protected int numruedas;
@@ -66,9 +66,5 @@ public class Vehiculo extends InterfacePrincipal
 		velocidad = velocidad + aumento;
 	}
 
-	@Override
-	public void ejecuta() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
