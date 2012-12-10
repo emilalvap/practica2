@@ -7,24 +7,39 @@ public class Bicicleta extends Vehiculo
 	protected int numpedales = 2;
 	
 	protected int numsillin = 1;
-	//el numero actual del piñon y plato activos
+	//el numero actual del pinon y plato activos
 	
 	protected int pinonact = 1;
 	protected int platoact = 1;
 	
-	//los dientes que tiene cada plato y piñon
+	//los dientes que tiene cada plato y pinon
 	protected int dientesplato [];
 	protected int dientespinon [];
 	
+	
+	//Cada pedalada, la rueda de traccion, arrastrada por el pinon, recorrera un espacio que
+	//dependera
+	//de la relaci�n plato / pinon
+	protected double relaciontransmision;
+		
+	//y del radio de la rueda
+	protected double radiorueda;
+	
+	//EspacioporcadaPedalada = RecorridoLinealDelaRueda * RelaciondeTransmisin
+	protected double espacioporpedalada;
+	
+		
 
 
 	
-	public void Bicicleta(int numeropinones, int numeroplatos)
+	public Bicicleta(int numeropinones, int numeroplatos,double radiorueda)
 	{
 	
 		dientesplato  = new int[numeroplatos];
 		dientespinon  = new int[numeropinones];
 		numruedas = 2;
+		relaciontransmision=numeroplatos/numeropinones;
+		espacioporpedalada= (Math.PI * radiorueda) * relaciontransmision; 
 	}
 	
 	
@@ -32,7 +47,7 @@ public class Bicicleta extends Vehiculo
 	
 	/**
 	 * devuelve el numero de pedales
-	 * @return
+	 * @return numpedales 
 	 */
 	public int getPedales ()
 	{
@@ -66,12 +81,12 @@ public class Bicicleta extends Vehiculo
 	}
 	
 	/**
-	 * asigna el numero de dientes correspondiente al piñon o plato,
+	 * asigna el numero de dientes correspondiente al pinon o plato,
 	 * 
-	 * @param numerodientes es el array que contiene el numero de dientes por piñon o plato que 
+	 * @param numerodientes es el array que contiene el numero de dientes por pinon o plato que 
 	 * queremos asignar
 	 * 
-	 * @param array sirve para introducir o bien el array de platos o el array de piñones al
+	 * @param array sirve para introducir o bien el array de platos o el array de pinones al
 	 *  cual se le va a asignar el numero de dientes
 	 */
 	public void setAsignaNumeroDientes(int [] numerodientes, int array[])
@@ -121,12 +136,12 @@ public class Bicicleta extends Vehiculo
 		peso = pesos;
 	}
 	/**
-	 * sirve para aumentar o disminuir el piñon que se quiere usar
+	 * sirve para aumentar o disminuir el pinon que se quiere usar
 	 * @param accion 'a' = aumentar , 'd' = disminuir
 	 */
 	public void setPinon(char accion)
 	{
-		//aumentamos el piñon
+		//aumentamos el pinon
 		if (accion == 'a')
 		{
 			if ( pinonact < dientespinon.length)
@@ -134,7 +149,7 @@ public class Bicicleta extends Vehiculo
 				pinonact++;
 			}
 		}
-		//disminuimos el piñon
+		//disminuimos el pinon
 		if (accion == 'd')
 		{
 			if ( pinonact > 1)
@@ -150,7 +165,7 @@ public class Bicicleta extends Vehiculo
 	 */
 	public void setPlato(char accion)
 	{
-		//aumentamos el piñon
+		//aumentamos el pinon
 		if (accion == 'a')
 		{
 			if ( platoact < dientesplato.length)
@@ -158,7 +173,7 @@ public class Bicicleta extends Vehiculo
 				platoact++;
 			}
 		}
-		//disminuimos el piñon
+		//disminuimos el pinon
 		if (accion == 'd')
 		{
 			if ( platoact > 1)
