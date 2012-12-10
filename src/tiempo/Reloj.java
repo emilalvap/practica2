@@ -59,8 +59,10 @@ public class Reloj extends Contador
 	}
 	
 	public void ejecuta() {
-		// TODO Auto-generated method stub
 		
+		segundo.incremento(m.devuelveSegundo());
+		minuto.incremento(segundo.pasoUnidad(60));
+		hora.incremento(minuto.pasoUnidad(60));
 	}
 	
 	
