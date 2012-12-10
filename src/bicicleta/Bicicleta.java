@@ -183,5 +183,12 @@ public class Bicicleta extends Vehiculo
 		}
 	}
 	
+	@Override
+	public void ejecuta() {
+		// TODO Auto-generated method stub
+	
+		System.out.println("test2");
+	}
+	
 		
 }

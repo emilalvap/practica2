@@ -1,6 +1,10 @@
 package tiempo;
 
-public class Contador{
+import interfaceMain.InterfaceMain;
+
+public class Contador implements InterfaceMain
+
+{
 
 	int unidad = 0;
 	/**
@@ -37,6 +41,11 @@ public class Contador{
 	public int getUnidad()
 	{
 		return unidad;
+	}
+	@Override
+	public void ejecuta() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

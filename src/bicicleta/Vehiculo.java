@@ -1,8 +1,10 @@
 package bicicleta;
 
+import interfaceMain.InterfaceMain;
 
 
-public class Vehiculo 
+
+public class Vehiculo implements InterfaceMain
 {
 	protected float velocidad;
 	protected int numruedas;
@@ -64,6 +66,13 @@ public class Vehiculo
 	public void acelerar (float aumento)
 	{
 		velocidad = velocidad + aumento;
+	}
+
+	@Override
+	public void ejecuta() {
+		// TODO Auto-generated method stub
+	
+		System.out.println("test1");
 	}
 
 	
