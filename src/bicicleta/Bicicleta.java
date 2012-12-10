@@ -1,6 +1,6 @@
 package bicicleta;
 
-public class Bicicleta extends Vehiculo
+public class Bicicleta extends Vehiculo 
 {
 	
 	//almacena el numero de pedales, ya que puede haber tandems

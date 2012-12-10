@@ -1,6 +1,8 @@
 package persona;
 
-public class Persona
+import interfacePrincipal.InterfacePrincipal;
+
+public class Persona extends InterfacePrincipal
 {
 	protected float peso;
 	protected float altura;
@@ -40,5 +42,10 @@ public class Persona
 	public float getAltura()
 	{
 		return altura;
+	}
+	@Override
+	public void ejecuta() {
+		// TODO Auto-generated method stub
+		
 	}
 }

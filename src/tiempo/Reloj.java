@@ -1,6 +1,9 @@
 package tiempo;
 
-public class Reloj {
+import interfacePrincipal.InterfacePrincipal;
+
+public class Reloj extends InterfacePrincipal
+{
 	
 	Milisegundo m = new Milisegundo();
 	Contador segundo = new Contador();
@@ -51,5 +54,10 @@ public class Reloj {
 		int segundos = 0;
 		segundos = segundo.getUnidad() + minuto.getUnidad() * 60 + hora.getUnidad() * 3600 ;
 		return segundos;
+	}
+	@Override
+	public void ejecuta() {
+		// TODO Auto-generated method stub
+		
 	}
 }
