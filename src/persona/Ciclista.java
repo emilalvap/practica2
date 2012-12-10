@@ -1,5 +1,7 @@
 package persona;
 
+import bicicleta.*;
+
 public class Ciclista extends Persona
 {
 	private float cadencia;
@@ -12,16 +14,17 @@ public class Ciclista extends Persona
 	
 	
 	//envia una cadencia de pedaleo a la bicicleta que esta transformara a movimiento
-	public void pedalear ()
+	public void pedalear (Bicicleta bici)
 	{
 		
 	}
 	
 	//asigna un rumbo que se enviara a la bicicleta
-	public void setRumbo(int d)
+	public void setRumbo(int d,Bicicleta bici)
 	{
-		
+		bici.setDireccion(d);
 	}
+	
 	@Override
 	public void ejecuta() {
 		// TODO Auto-generated method stub
