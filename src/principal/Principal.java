@@ -8,6 +8,8 @@ import interfaceMain.InterfaceMain;
 
 import java.util.ArrayList;
 
+import persona.Ciclista;
+
 
 import bicicleta.Bicicleta;
 
@@ -24,14 +26,17 @@ public class Principal
 		
 		Bicicleta bici1= new Bicicleta(1, 1, 1);
 		Reloj reloj= new Reloj();
+		Ciclista ciclista = new Ciclista();
 		
 		lista.add(bici1);
 		lista.add(reloj);
+		lista.add(ciclista);
 		
-		for (InterfaceMain c: lista)
-		{
-			c.ejecuta();
-		}
+		
+			for (InterfaceMain c: lista)
+			{
+				c.ejecuta();
+			}
 		
 		
 		//Milisegundo mil = new Milisegundo();
