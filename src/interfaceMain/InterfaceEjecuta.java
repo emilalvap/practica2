@@ -1,6 +1,6 @@
 package interfaceMain;
 
-public interface InterfaceEjecuta  {
+public interface InterfaceEjecuta {
 	void ejecuta();
 
 }

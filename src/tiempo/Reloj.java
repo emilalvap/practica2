@@ -1,6 +1,5 @@
 package tiempo;
 
-
 public class Reloj extends Contador {
 
 	Milisegundo m = new Milisegundo();

@@ -33,9 +33,9 @@ public class Bicicleta extends Vehiculo {
 		dientesplato = new int[numeroplatos];
 		dientespinon = new int[numeropinones];
 		numruedas = 2;
-		
-		dientesplato[pinonact]=2;
-		dientespinon[platoact]=5;
+
+		dientesplato[pinonact] = 2;
+		dientespinon[platoact] = 5;
 
 		relaciontransmision = dientespinon[pinonact] / dientesplato[platoact];
 		setEspacioporpedalada((Math.PI * radiorueda) * relaciontransmision);

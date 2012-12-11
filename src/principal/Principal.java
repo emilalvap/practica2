@@ -1,7 +1,5 @@
 package principal;
 
-
-
 import interfaceMain.InterfaceEjecuta;
 
 import java.util.ArrayList;

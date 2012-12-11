@@ -2,8 +2,6 @@ package tiempo;
 
 import interfaceMain.InterfaceEjecuta;
 
-
-
 public class Contador implements InterfaceEjecuta
 
 {

@@ -2,7 +2,6 @@ package bicicleta;
 
 import interfaceMain.InterfaceEjecuta;
 
-
 public class Vehiculo implements InterfaceEjecuta {
 	protected float velocidad;
 	protected int numruedas;
@@ -78,7 +77,8 @@ public class Vehiculo implements InterfaceEjecuta {
 		return aceleracion;
 	}
 
-	public float calcularVelocidadFinal(float vinicial, float aceleracion,int tiempo) {
+	public float calcularVelocidadFinal(float vinicial, float aceleracion,
+			int tiempo) {
 		float vfinal = 0;
 
 		vfinal = vinicial + aceleracion * tiempo;
