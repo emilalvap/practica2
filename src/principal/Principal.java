@@ -1,6 +1,7 @@
 package principal;
 
 import interfaceMain.InterfaceEjecuta;
+import interfaceMain.InterfaceSalida;
 
 import java.util.ArrayList;
 
@@ -8,11 +9,13 @@ import persona.Ciclista;
 
 import bicicleta.Bicicleta;
 
+import salidaDeDatos.SalidaDeDatos;
 import tiempo.*;
 
 public class Principal {
 
-	private ArrayList<Object> lista;
+	private ArrayList<Object> listaejecuta;
+	private ArrayList<Object> listasalida;
 
 	public static void main(String args[]) {
 
@@ -24,24 +27,36 @@ public class Principal {
 	}
 
 	public void inicia() {
-		lista = new ArrayList<Object>();
+		listaejecuta = new ArrayList<Object>();
+		listasalida = new ArrayList<Object>();
 
 		InterfaceEjecuta bici1 = new Bicicleta(5, 2, 1);
 		InterfaceEjecuta reloj = new Reloj();
 		InterfaceEjecuta ciclista = new Ciclista((Bicicleta) bici1);
 
-		lista.add(bici1);
-		lista.add(reloj);
-		lista.add(ciclista);
+		listaejecuta.add(bici1);
+		listaejecuta.add(reloj);
+		listaejecuta.add(ciclista);
+
+		listasalida.add(bici1);
+		listasalida.add(reloj);
+		listasalida.add(ciclista);
 
 	}
 
 	public void ejecuta() {
 
+		SalidaDeDatos salida = new SalidaDeDatos();
+
 		while (true) {
-			for (Object c : lista) {
+			for (Object c : listaejecuta) {
 				((InterfaceEjecuta) c).ejecuta();
 			}
+			for (Object c : listasalida) {
+
+				salida.muestra(c);
+			}
+
 		}
 	}
 

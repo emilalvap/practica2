@@ -48,7 +48,7 @@ public class Persona implements InterfaceEjecuta {
 
 	@Override
 	public void ejecuta() {
-		// TODO Auto-generated method stub
+	
 
 	}
 

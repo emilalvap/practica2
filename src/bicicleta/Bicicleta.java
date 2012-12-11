@@ -174,9 +174,9 @@ public class Bicicleta extends Vehiculo {
 
 	@Override
 	public void ejecuta() {
-		// TODO Auto-generated method stub
+		
 
-		System.out.println("test2");
+	
 	}
 
 	/**
@@ -192,6 +192,70 @@ public class Bicicleta extends Vehiculo {
 	 */
 	public void setEspacioporpedalada(double espacioporpedalada) {
 		this.espacioporpedalada = espacioporpedalada;
+	}
+
+	public int getNumpedales() {
+		return numpedales;
+	}
+
+	public void setNumpedales(int numpedales) {
+		this.numpedales = numpedales;
+	}
+
+	public int getNumsillin() {
+		return numsillin;
+	}
+
+	public void setNumsillin(int numsillin) {
+		this.numsillin = numsillin;
+	}
+
+	public int getPinonact() {
+		return pinonact;
+	}
+
+	public void setPinonact(int pinonact) {
+		this.pinonact = pinonact;
+	}
+
+	public int getPlatoact() {
+		return platoact;
+	}
+
+	public void setPlatoact(int platoact) {
+		this.platoact = platoact;
+	}
+
+	public int[] getDientesplato() {
+		return dientesplato;
+	}
+
+	public void setDientesplato(int[] dientesplato) {
+		this.dientesplato = dientesplato;
+	}
+
+	public int[] getDientespinon() {
+		return dientespinon;
+	}
+
+	public void setDientespinon(int[] dientespinon) {
+		this.dientespinon = dientespinon;
+	}
+
+	public double getRelaciontransmision() {
+		return relaciontransmision;
+	}
+
+	public void setRelaciontransmision(double relaciontransmision) {
+		this.relaciontransmision = relaciontransmision;
+	}
+
+	public double getRadiorueda() {
+		return radiorueda;
+	}
+
+	public void setRadiorueda(double radiorueda) {
+		this.radiorueda = radiorueda;
 	}
 
 }

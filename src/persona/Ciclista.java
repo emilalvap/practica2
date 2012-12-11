@@ -15,7 +15,7 @@ public class Ciclista extends Persona {
 	// movimiento
 
 	public Ciclista(Bicicleta nueva_bici) {
-		bici = nueva_bici;
+		setBici(nueva_bici);
 		cadencia = 1;
 
 	}
@@ -26,14 +26,14 @@ public class Ciclista extends Persona {
 		float velocidad_final;
 		float espacio;
 
-		aceleracion = bici.calcularAceleracion(bici.getVelocidad(),
-				(float) (bici.getEspacioporpedalada() / cadencia), 1);
-		velocidad_final = bici.calcularVelocidadFinal(bici.getVelocidad(),
+		aceleracion = getBici().calcularAceleracion(getBici().getVelocidad(),
+				(float) (getBici().getEspacioporpedalada() / cadencia), 1);
+		velocidad_final = getBici().calcularVelocidadFinal(getBici().getVelocidad(),
 				aceleracion, 1);
-		espacio = bici.calcularEspacioRecorrido(bici.getVelocidad(), 1,
+		espacio = getBici().calcularEspacioRecorrido(getBici().getVelocidad(), 1,
 				aceleracion);
 
-		bici.acelerar(velocidad_final);
+		getBici().acelerar(velocidad_final);
 
 	}
 
@@ -46,8 +46,22 @@ public class Ciclista extends Persona {
 	public void ejecuta() {
 
 		pedalear();
-		System.out.println(bici.getVelocidad());
+		
 
+	}
+
+	/**
+	 * @return the bici
+	 */
+	public Bicicleta getBici() {
+		return bici;
+	}
+
+	/**
+	 * @param bici the bici to set
+	 */
+	public void setBici(Bicicleta bici) {
+		this.bici = bici;
 	}
 
 }

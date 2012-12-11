@@ -95,9 +95,9 @@ public class Vehiculo implements InterfaceEjecuta {
 
 	@Override
 	public void ejecuta() {
-		// TODO Auto-generated method stub
+		
 
-		System.out.println("test1");
+		
 	}
 
 }
