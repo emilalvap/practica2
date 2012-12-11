@@ -1,16 +1,13 @@
 package principal;
 
 import interfaceMain.InterfaceEjecuta;
-import interfaceMain.InterfaceSalida;
 
 import java.util.ArrayList;
 
 import persona.Ciclista;
-
-import bicicleta.Bicicleta;
-
 import salidaDeDatos.SalidaDeDatos;
-import tiempo.*;
+import tiempo.Reloj;
+import bicicleta.Bicicleta;
 
 public class Principal {
 
