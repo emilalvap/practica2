@@ -1,8 +1,7 @@
 package tiempo;
 
-import interfaceMain.InterfaceMain;
 
-public class Reloj implements InterfaceMain {
+public class Reloj extends Contador {
 
 	Milisegundo m = new Milisegundo();
 	Contador segundo = new Contador();

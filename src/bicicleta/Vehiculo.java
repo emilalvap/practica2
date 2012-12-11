@@ -1,8 +1,9 @@
 package bicicleta;
 
-import interfaceMain.InterfaceMain;
+import interfaceMain.InterfaceEjecuta;
 
-public class Vehiculo implements InterfaceMain {
+
+public class Vehiculo implements InterfaceEjecuta {
 	protected float velocidad;
 	protected int numruedas;
 

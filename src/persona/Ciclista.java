@@ -24,9 +24,15 @@ public class Ciclista extends Persona {
 		
 		float aceleracion;
 		float velocidad_final;
+		float espacio;
+		
 		aceleracion= bici.calcularAceleracion(bici.getVelocidad(), (float) (bici.getEspacioporpedalada()/cadencia), 1);
 		velocidad_final=bici.calcularVelocidadFinal(bici.getVelocidad(), aceleracion, 1);
-		bici.acelerar(velocidad_final);
+		espacio=bici.calcularEspacioRecorrido(bici.getVelocidad(), 1, aceleracion);
+		
+		
+		
+		bici.setVelocidad(velocidad_final);
 				
 	}
 

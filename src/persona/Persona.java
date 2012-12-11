@@ -1,8 +1,10 @@
 package persona;
 
-import interfaceMain.InterfaceMain;
+import interfaceMain.InterfaceEjecuta;
 
-public class Persona implements InterfaceMain {
+
+
+public class Persona implements InterfaceEjecuta {
 	protected float peso;
 	protected float altura;
 

@@ -1,6 +1,8 @@
 package principal;
 
-import interfaceMain.InterfaceMain;
+
+
+import interfaceMain.InterfaceEjecuta;
 
 import java.util.ArrayList;
 
@@ -26,9 +28,9 @@ public class Principal {
 	public void inicia() {
 		lista = new ArrayList<Object>();
 
-		InterfaceMain bici1 = new Bicicleta(5, 2, 1);
-		InterfaceMain reloj = new Reloj();
-		InterfaceMain ciclista = new Ciclista((Bicicleta) bici1);
+		InterfaceEjecuta bici1 = new Bicicleta(5, 2, 1);
+		InterfaceEjecuta reloj = new Reloj();
+		InterfaceEjecuta ciclista = new Ciclista((Bicicleta) bici1);
 
 		lista.add(bici1);
 		lista.add(reloj);
@@ -40,7 +42,7 @@ public class Principal {
 
 		while (true) {
 			for (Object c : lista) {
-				((InterfaceMain) c).ejecuta();
+				((InterfaceEjecuta) c).ejecuta();
 			}
 		}
 	}

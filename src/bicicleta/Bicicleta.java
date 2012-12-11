@@ -8,8 +8,8 @@ public class Bicicleta extends Vehiculo {
 	protected int numsillin = 1;
 	// el numero actual del pinon y plato activos
 
-	protected int pinonact = 1;
-	protected int platoact = 1;
+	protected int pinonact = 0;
+	protected int platoact = 0;
 
 	// los dientes que tiene cada plato y pinon
 	protected int dientesplato[];
@@ -28,14 +28,16 @@ public class Bicicleta extends Vehiculo {
 	private double espacioporpedalada;
 
 	public Bicicleta(int numeropinones, int numeroplatos, double radiorueda) {
-		
+
 		super();
 		dientesplato = new int[numeroplatos];
 		dientespinon = new int[numeropinones];
 		numruedas = 2;
 		
-		
-		relaciontransmision = dientesplato[pinonact] / dientesplato[platoact];
+		dientesplato[pinonact]=2;
+		dientespinon[platoact]=5;
+
+		relaciontransmision = dientespinon[pinonact] / dientesplato[platoact];
 		setEspacioporpedalada((Math.PI * radiorueda) * relaciontransmision);
 	}
 
@@ -177,8 +179,6 @@ public class Bicicleta extends Vehiculo {
 		System.out.println("test2");
 	}
 
-	
-
 	/**
 	 * @return the espacioporpedalada
 	 */
@@ -187,7 +187,8 @@ public class Bicicleta extends Vehiculo {
 	}
 
 	/**
-	 * @param espacioporpedalada the espacioporpedalada to set
+	 * @param espacioporpedalada
+	 *            the espacioporpedalada to set
 	 */
 	public void setEspacioporpedalada(double espacioporpedalada) {
 		this.espacioporpedalada = espacioporpedalada;

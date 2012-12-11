@@ -1,8 +1,10 @@
 package tiempo;
 
-import interfaceMain.InterfaceMain;
+import interfaceMain.InterfaceEjecuta;
 
-public class Contador implements InterfaceMain
+
+
+public class Contador implements InterfaceEjecuta
 
 {
 
