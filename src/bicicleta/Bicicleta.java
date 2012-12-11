@@ -18,22 +18,25 @@ public class Bicicleta extends Vehiculo {
 	// Cada pedalada, la rueda de traccion, arrastrada por el pinon, recorrera
 	// un espacio que
 	// dependera
-	// de la relaciï¿½n plato / pinon
+	// de la relacion plato / pinon
 	protected double relaciontransmision;
 
 	// y del radio de la rueda
 	protected double radiorueda;
 
 	// EspacioporcadaPedalada = RecorridoLinealDelaRueda * RelaciondeTransmisin
-	protected double espacioporpedalada;
+	private double espacioporpedalada;
 
 	public Bicicleta(int numeropinones, int numeroplatos, double radiorueda) {
-
+		
+		super();
 		dientesplato = new int[numeroplatos];
 		dientespinon = new int[numeropinones];
 		numruedas = 2;
-		relaciontransmision = numeroplatos / numeropinones;
-		espacioporpedalada = (Math.PI * radiorueda) * relaciontransmision;
+		
+		
+		relaciontransmision = dientesplato[pinonact] / dientesplato[platoact];
+		setEspacioporpedalada((Math.PI * radiorueda) * relaciontransmision);
 	}
 
 	/**
@@ -172,6 +175,22 @@ public class Bicicleta extends Vehiculo {
 		// TODO Auto-generated method stub
 
 		System.out.println("test2");
+	}
+
+	
+
+	/**
+	 * @return the espacioporpedalada
+	 */
+	public double getEspacioporpedalada() {
+		return espacioporpedalada;
+	}
+
+	/**
+	 * @param espacioporpedalada the espacioporpedalada to set
+	 */
+	public void setEspacioporpedalada(double espacioporpedalada) {
+		this.espacioporpedalada = espacioporpedalada;
 	}
 
 }

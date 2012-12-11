@@ -26,9 +26,9 @@ public class Principal {
 	public void inicia() {
 		lista = new ArrayList<Object>();
 
-		InterfaceMain bici1 = new Bicicleta(1, 1, 1);
+		InterfaceMain bici1 = new Bicicleta(5, 2, 1);
 		InterfaceMain reloj = new Reloj();
-		InterfaceMain ciclista = new Ciclista();
+		InterfaceMain ciclista = new Ciclista((Bicicleta) bici1);
 
 		lista.add(bici1);
 		lista.add(reloj);

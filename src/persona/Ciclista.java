@@ -3,7 +3,8 @@ package persona;
 import bicicleta.*;
 
 public class Ciclista extends Persona {
-	private float cadencia;
+	private float cadencia; // numero de pedaladas por segundo
+	private Bicicleta bici;
 
 	/*
 	 * formulas espacio = Vinicial * tiempo + (1/2)*a*(t al cuadrado) Vfinal = V
@@ -12,8 +13,21 @@ public class Ciclista extends Persona {
 
 	// envia una cadencia de pedaleo a la bicicleta que esta transformara a
 	// movimiento
-	public void pedalear(Bicicleta bici) {
 
+	public Ciclista(Bicicleta nueva_bici) {
+		bici = nueva_bici;
+		cadencia=1; 
+
+	}
+
+	public void pedalear() {
+		
+		float aceleracion;
+		float velocidad_final;
+		aceleracion= bici.calcularAceleracion(bici.getVelocidad(), (float) (bici.getEspacioporpedalada()/cadencia), 1);
+		velocidad_final=bici.calcularVelocidadFinal(bici.getVelocidad(), aceleracion, 1);
+		bici.acelerar(velocidad_final);
+				
 	}
 
 	// asigna un rumbo que se enviara a la bicicleta
@@ -23,7 +37,9 @@ public class Ciclista extends Persona {
 
 	@Override
 	public void ejecuta() {
-		// TODO Auto-generated method stub
+		
+		pedalear();
+		System.out.println(bici.getVelocidad());
 
 	}
 
