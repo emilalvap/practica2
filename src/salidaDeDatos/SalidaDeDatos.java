@@ -15,24 +15,26 @@ public class SalidaDeDatos implements InterfaceSalida
 		
 		if( obj instanceof Bicicleta)
 		{
-			muestraBicicleta((Bicicleta)obj);
+			//muestraBicicleta((Bicicleta)obj);
 		}
 		if( obj instanceof Reloj)
 		{
-			muestraReloj((Reloj)obj);
+			((Reloj) obj).mostrarReloj();
 		}
 		if( obj instanceof Ciclista)
 		{
-			muestraCiclista((Ciclista)obj);
+			//muestraCiclista((Ciclista)obj);
+			System.out.println(((Ciclista) obj).getBici().getVelocidad());
 		}
 		
 	}
-	
+	/*
 	public void muestraBicicleta(Bicicleta bici)
 	{
 				
 	}
-
+	*/
+/* metodo movido a reloj
 	public void muestraReloj(Reloj rel)
 	{
 		int tiempo[] = new int[3];
@@ -40,12 +42,13 @@ public class SalidaDeDatos implements InterfaceSalida
 		System.out.println("hora " + tiempo[2] + " minuto " + tiempo[1]
 				+ " segundo " + tiempo[0]);
 	}
-	
+	*/
+	/*
 	public void muestraCiclista(Ciclista Cicli)
 	{
 		System.out.println(Cicli.getBici().getVelocidad());
 	}
-
+*/
 	
 	
 }

@@ -145,7 +145,7 @@ public class Bicicleta extends Vehiculo {
 		}
 		// disminuimos el pinon
 		if (accion == 'd') {
-			if (pinonact > 1) {
+			if (pinonact > 0) {
 				pinonact--;
 			}
 		}
