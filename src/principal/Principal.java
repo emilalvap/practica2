@@ -31,8 +31,12 @@ public class Principal {
 	public void inicia() {
 		listaejecuta = new ArrayList<Object>();
 		listasalida = new ArrayList<Object>();
+//(int numeropinones, int numeroplatos, double radiorueda,int midientepinon[], int midienteplato[]) {
 
-		InterfaceEjecuta bici1 = new Bicicleta(5, 2, 1);
+		int dientesporpinon[] = {6,5,4,3,2,1};
+		int dientesporplato[] = {2,3,4};
+		InterfaceEjecuta bici1 = new Bicicleta(dientesporpinon.length, dientesporplato.length, 
+								1,dientesporpinon,dientesporplato);
 		InterfaceEjecuta reloj = new Reloj();
 		InterfaceEjecuta ciclista = new Ciclista((Bicicleta) bici1);
 

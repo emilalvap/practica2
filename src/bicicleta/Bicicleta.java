@@ -35,16 +35,25 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	// EspacioporcadaPedalada = RecorridoLinealDelaRueda * RelaciondeTransmisin
 	private double espacioporpedalada;
 
-	public Bicicleta(int numeropinones, int numeroplatos, double radiorueda) {
+	public Bicicleta(int numeropinones, int numeroplatos, double radiorueda,int midientepinon[], int midienteplato[]) {
 
 		super();
+		int i = 0;
+		
 		dientesplato = new int[numeroplatos];
 		dientespinon = new int[numeropinones];
 		numruedas = 2;
 
-		dientesplato[pinonact] = 2;
-		dientespinon[platoact] = 5;
+		
+		
+		dientesplato[platoact] = 5;
 
+		//asignamos el numero de dientes a cada piñon y a cada plato
+		
+		setAsignaNumeroDientesPinon( midientepinon);
+		
+		setAsignaNumeroDientesPlato( midienteplato);
+		
 		relaciontransmision = dientespinon[pinonact] / dientesplato[platoact];
 		setEspacioporpedalada((Math.PI * radiorueda) * relaciontransmision);
 	}
@@ -93,28 +102,93 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	 *            plato que queremos asignar
 	 * 
 	 * @param array
-	 *            sirve para introducir o bien el array de platos o el array de
+	 *            sirve para introducir el array de
 	 *            pinones al cual se le va a asignar el numero de dientes
 	 */
-	public void setAsignaNumeroDientes(int[] numerodientes, int array[]) {
+	public void setAsignaNumeroDientesPinon( int numerodientes[]) {
 		int i = 0;
 		boolean compruebadientes = true;
-		if (numerodientes.length == array.length) {
+		if (dientespinon.length == numerodientes.length) 
+		{
 
-			while (i < numerodientes.length && compruebadientes) {
+			i = 1;
+			while (i < dientespinon.length  && compruebadientes) 
+			{
 
-				array[i] = numerodientes[i];
-				if (numerodientes[i] <= numerodientes[i + 1]) {
+				if (numerodientes[i-1] <= numerodientes[i]) 
+				{
+				
 					compruebadientes = false;
 				}
 				i++;
 			}
-			if (!compruebadientes) {
+			i = 0;
+			
+			if (!compruebadientes) 
+			{
 				System.out
 						.println("Los dientes no se asignaron correctamente porque el "
-								+ "disco siguiente tenia mas dientes que el anterior");
+								+ "piñon siguiente tenia mas dientes que el anterior");
 			}
-		} else {
+			else
+			{
+				while (i < dientespinon.length  && compruebadientes) 
+				{
+
+					dientespinon[i] = numerodientes[i];		
+					i++;
+				}
+			}
+		} 
+		else 
+		{
+			System.out
+					.print("no se pueden asignar dientes porque los array de piñones no tienen la "
+							+ "misma longitud");
+		}
+	}
+	
+	/**
+	 * asigna a los platos de la bicicleta, el numero de dientes del array
+	 * @param numerodientes trae el numero de dientes por plato
+	 */
+	public void setAsignaNumeroDientesPlato( int numerodientes[]) {
+		int i = 0;
+		boolean compruebadientes = true;
+		if (dientesplato.length == numerodientes.length) 
+		{
+
+			i = 1;
+			while (i < dientesplato.length  && compruebadientes) 
+			{
+
+				if (numerodientes[i-1] >= numerodientes[i]) 
+				{
+				
+					compruebadientes = false;
+				}
+				i++;
+			}
+			i = 0;
+			
+			if (!compruebadientes) 
+			{
+				System.out
+						.println("Los dientes no se asignaron correctamente porque el "
+								+ "plato siguiente tenia menos dientes que el anterior");
+			}
+			else
+			{
+				while (i < dientesplato.length  && compruebadientes) 
+				{
+
+					dientesplato[i] = numerodientes[i];		
+					i++;
+				}
+			}
+		} 
+		else 
+		{
 			System.out
 					.print("no se pueden asignar dientes porque los array no tienen la "
 							+ "misma longitud");

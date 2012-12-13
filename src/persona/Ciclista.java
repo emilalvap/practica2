@@ -44,7 +44,6 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 		bici.setDireccion(d);
 	}
 
-	@Override
 	public void ejecuta() {
 
 		pedalear();
@@ -65,7 +64,7 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 	public void setBici(Bicicleta bici) {
 		this.bici = bici;
 	}
-	@Override
+	
 	public void muestra() {
 		
 		
