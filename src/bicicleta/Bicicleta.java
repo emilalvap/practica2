@@ -1,5 +1,6 @@
 package bicicleta;
 
+import salidaDeDatos.SalidaDeDatos;
 import interfaceMain.InterfaceEjecuta;
 import interfaceMain.InterfaceSalida;
 /**
@@ -289,7 +290,10 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 
 	@Override
 	public void muestra() {
-		// TODO Auto-generated method stub
+		SalidaDeDatos output= new SalidaDeDatos();
+		String mensaje;
+		mensaje = String.valueOf(getVelocidad());
+		output.mostrarPorPantalla(mensaje, "velocidad");
 		
 	}
 
