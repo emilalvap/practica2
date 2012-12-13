@@ -71,12 +71,12 @@ public class Reloj extends Contador  implements InterfaceEjecuta,InterfaceSalida
 	{
 		//mostrarReloj();
 		
-		SalidaDeDatos output= new SalidaDeDatos();
+		SalidaDeDatos salida= new SalidaDeDatos();
 		int tiempo[] = new int[3];
 		tiempo = devuelveTiempo();
 		String mensaje;
-		mensaje = String.valueOf(tiempo[2] + ":" + tiempo[1] + ":" + tiempo[0] );
-		output.mostrarPorPantalla(mensaje, "reloj");
+		mensaje = String.valueOf(tiempo[2] + " " + tiempo[1] + " " + tiempo[0] );
+		salida.mostrarPorPantalla(mensaje, "hh:mm:ss");
 	}
 
 }
