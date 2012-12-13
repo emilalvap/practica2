@@ -4,6 +4,7 @@ package tiempo;
  * @author Juan Carlos Marco y Juan Luis Pérez
  *
  */
+import salidaDeDatos.SalidaDeDatos;
 import interfaceMain.InterfaceEjecuta;
 import interfaceMain.InterfaceSalida;
 
@@ -68,7 +69,14 @@ public class Reloj extends Contador  implements InterfaceEjecuta,InterfaceSalida
 	}
 	public void muestra()
 	{
-		mostrarReloj();
+		//mostrarReloj();
+		
+		SalidaDeDatos output= new SalidaDeDatos();
+		int tiempo[] = new int[3];
+		tiempo = devuelveTiempo();
+		String mensaje;
+		mensaje = String.valueOf(tiempo[2] + ":" + tiempo[1] + ":" + tiempo[0] );
+		output.mostrarPorPantalla(mensaje, "reloj");
 	}
 
 }

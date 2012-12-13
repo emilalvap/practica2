@@ -20,6 +20,8 @@ public class SalidaDeDatos
 		{
 		case "velocidad": mensaje_final="Velocidad actual:" + mensaje + " m/s ";
 		break;
+		case "reloj": mensaje_final="Hora actual : " + mensaje;
+		break;
 		}
 		System.out.println(mensaje_final);
 	}
