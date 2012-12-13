@@ -6,7 +6,7 @@ import interfaceMain.InterfaceSalida;
 /**
  * 
  * Bicicleta estándar . Hereda de Vehiculo
- * @author Juan Carlos Marco y Juan Luis Pérez
+ * @author Juan Carlos Marco y Juan Luis Perez
  */
 public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceSalida{
 
