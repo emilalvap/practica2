@@ -116,7 +116,29 @@ public class Bicicleta extends Vehiculo {
 							+ "misma longitud");
 		}
 	}
+	/**
+	 * Este metodo recibe una pedalada del ciclista . Realizará los cálculos pertinentes pertenciencientes al Movimiento
+	 * Rectilineo Uniformente Acelerado ( MRUA ) y devolverá una modificacion de la velocidad de la bicicleta.
+	 * @param cadencia pedaladas por segundo que manda el ciclista
+	 */
+	public void darPedalada(float cadencia)
+	{
+		float aceleracion;
+		float velocidad_final;
+		float espacio;
 
+		aceleracion = calcularAceleracion(getVelocidad(),
+				(float) (getEspacioporpedalada() / cadencia), 1);
+		velocidad_final = calcularVelocidadFinal(getVelocidad(),
+				aceleracion, 1);
+		espacio = calcularEspacioRecorrido(getVelocidad(), 1,
+				aceleracion);
+		espaciorecorrido+=espacio;
+
+		acelerar(velocidad_final);
+	}
+	
+	
 	/**
 	 * sirve para asignar el numero de pedales
 	 * 

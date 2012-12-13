@@ -26,21 +26,16 @@ public class Ciclista extends Persona implements InterfaceEjecuta  {
 		cadencia = 1;
 
 	}
-
+/**
+ * Acción básica del ciclista. Mandará un mensaje a su bicicleta con las pedaladas por segundo.
+ * Si ha alcanzado la velocidad máxima ( relacionada con la relaciones de piñones y demás especificaciones de la bicicleta )
+ * el pedaleo no tendrá efecto
+ * 
+ */
 	public void pedalear() {
 
-		float aceleracion;
-		float velocidad_final;
-		float espacio;
-
-		aceleracion = getBici().calcularAceleracion(getBici().getVelocidad(),
-				(float) (getBici().getEspacioporpedalada() / cadencia), 1);
-		velocidad_final = getBici().calcularVelocidadFinal(getBici().getVelocidad(),
-				aceleracion, 1);
-		espacio = getBici().calcularEspacioRecorrido(getBici().getVelocidad(), 1,
-				aceleracion);
-
-		getBici().acelerar(velocidad_final);
+		
+		getBici().darPedalada(cadencia);
 
 	}
 

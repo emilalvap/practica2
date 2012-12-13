@@ -11,9 +11,12 @@ public class Vehiculo implements InterfaceEjecuta {
 
 	protected int direccion = 0;
 	protected float peso = 0;
+	
+	protected float espaciorecorrido;
 
 	public Vehiculo() {
 		velocidad = 0;
+		espaciorecorrido = 0 ;
 	}
 
 	/**

@@ -7,7 +7,7 @@ public class Milisegundo {
 	/**
 	 * este metodo cuenta milisegundos y devuelve 1 cuando se cuenta un segundo
 	 * 
-	 * @return
+	 * @return Si ha transcurrido un segundo
 	 */
 	public int devuelveSegundo() {
 		milisegundosactuales = System.currentTimeMillis();// Variable para
