@@ -5,7 +5,7 @@ import interfaceMain.InterfaceEjecuta;
 /**
  * 
  * Esta clase representa una persona física con todos su atributos
- *
+ * @author Juan Carlos Marco y Juan Luis Pérez
  */
 public class Persona {
 	protected float peso;

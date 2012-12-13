@@ -1,26 +1,21 @@
 package persona;
 
+import salidaDeDatos.SalidaDeDatos;
 import interfaceMain.InterfaceEjecuta;
+import interfaceMain.InterfaceSalida;
 import bicicleta.*;
 
 
 /**
  * Esta clase representa una especializacion de persona , ciclista , es decir , persona que conduce una bicicleta y conoce su interfaz
- * @author Juan
+ * @author Juan Carlos Marco y Juan Luis Pérez
  *
  */
-public class Ciclista extends Persona implements InterfaceEjecuta  {
+public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalida {
 	private float cadencia; // numero de pedaladas por segundo
 	private Bicicleta bici;
 
-	/*
-	 * formulas espacio = Vinicial * tiempo + (1/2)*a*(t al cuadrado) Vfinal = V
-	 * inicial + a * t cadencia = (pedaleo/minuto) * (plato/piÃ±on) = 2 * pi * R
-	 */
-
-	// envia una cadencia de pedaleo a la bicicleta que esta transformara a
-	// movimiento
-
+	
 	public Ciclista(Bicicleta nueva_bici) {
 		setBici(nueva_bici);
 		cadencia = 1;
@@ -34,9 +29,14 @@ public class Ciclista extends Persona implements InterfaceEjecuta  {
  */
 	public void pedalear() {
 
+		float velocidad_maxima;
 		
-		getBici().darPedalada(cadencia);
-
+		velocidad_maxima= (float) (bici.getEspacioporpedalada() / cadencia) ;
+		if (bici.getVelocidad() < velocidad_maxima)
+		{
+			getBici().darPedalada(cadencia);
+		}
+		
 	}
 
 	// asigna un rumbo que se enviara a la bicicleta
@@ -64,6 +64,16 @@ public class Ciclista extends Persona implements InterfaceEjecuta  {
 	 */
 	public void setBici(Bicicleta bici) {
 		this.bici = bici;
+	}
+	@Override
+	public void muestra() {
+		SalidaDeDatos output= new SalidaDeDatos();
+		String mensaje;
+		mensaje = String.valueOf(bici.getVelocidad());
+		output.mostrarPorPantalla(mensaje, "velocidad");
+		
+		
+		
 	}
 
 }

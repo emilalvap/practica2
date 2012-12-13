@@ -1,7 +1,7 @@
 package tiempo;
 /**
  * Clase especializada de contador que maneja horas , minutos y segundos
- * @author Juan
+ * @author Juan Carlos Marco y Juan Luis Pérez
  *
  */
 public class Reloj extends Contador {

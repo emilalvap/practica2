@@ -1,6 +1,7 @@
 package principal;
 
 import interfaceMain.InterfaceEjecuta;
+import interfaceMain.InterfaceSalida;
 
 import java.util.ArrayList;
 
@@ -8,7 +9,11 @@ import persona.Ciclista;
 import salidaDeDatos.SalidaDeDatos;
 import tiempo.Reloj;
 import bicicleta.Bicicleta;
-
+/**
+ * Clase Principal del programa
+ * @author Juan Carlos Marco y Juan Luis Pérez
+ *
+ */
 public class Principal {
 
 	private ArrayList<Object> listaejecuta;
@@ -35,8 +40,8 @@ public class Principal {
 		listaejecuta.add(reloj);
 		listaejecuta.add(ciclista);
 
-		listasalida.add(bici1);
-		listasalida.add(reloj);
+		//listasalida.add(bici1);
+		//listasalida.add(reloj);
 		listasalida.add(ciclista);
 
 	}
@@ -51,7 +56,7 @@ public class Principal {
 			}
 			for (Object c : listasalida) {
 
-				//salida.muestra(c);
+				((InterfaceSalida) c).muestra();
 			}
 
 		}

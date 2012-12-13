@@ -1,5 +1,9 @@
 package tiempo;
-
+/**
+ * 
+ * @author Juan Carlos Marco y Juan Luis Pérez
+ *
+ */
 public class Milisegundo {
 	private long milisegundosactuales;
 	private long milisegundos;

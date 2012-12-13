@@ -4,17 +4,29 @@ import persona.Ciclista;
 import tiempo.Reloj;
 import interfaceMain.InterfaceSalida;
 import bicicleta.Bicicleta;
-
-public class SalidaDeDatos implements InterfaceSalida
-
+/**
+ * 
+ * @author Juan Carlos Marco y Juan Luis Pérez
+ *
+ */
+public class SalidaDeDatos 
 {
 
-	@Override
-	public void muestra(String mensaje, String formato) {
-		// TODO Auto-generated method stub
-		
+	
+	public void mostrarPorPantalla(String mensaje,String formato)
+	{
+		String mensaje_final="";
+		switch(formato)
+		{
+		case "velocidad": mensaje_final="Velocidad actual:" + mensaje + " m/s ";
+		break;
+		}
+		System.out.println(mensaje_final);
 	}
 
+	
+	
+	
 	/*@Override
 	public void muestra(Object obj) {
 		// TODO Auto-generated method stub

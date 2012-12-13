@@ -4,7 +4,7 @@ import interfaceMain.InterfaceEjecuta;
 
 /**
  * Esta clase representa un contador estandar de un intervalo de tiempo variable.
- * @author Juan
+ * @author Juan Carlos Marco y Juan Luis Pérez
  *
  */
 public class Contador implements InterfaceEjecuta

@@ -2,7 +2,7 @@ package bicicleta;
 /**
  * 
  * Bicicleta estándar . Hereda de Vehiculo
- *
+ * @author Juan Carlos Marco y Juan Luis Pérez
  */
 public class Bicicleta extends Vehiculo {
 
