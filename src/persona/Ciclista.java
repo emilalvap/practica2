@@ -68,10 +68,7 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 	@Override
 	public void muestra() {
 		
-		SalidaDeDatos output= new SalidaDeDatos();
-		String mensaje;
-		mensaje = String.valueOf(bici.getVelocidad());
-		output.mostrarPorPantalla(mensaje, "velocidad");
+		
 				
 		
 	}

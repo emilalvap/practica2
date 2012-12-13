@@ -40,7 +40,7 @@ public class Principal {
 		listaejecuta.add(reloj);
 		listaejecuta.add(ciclista);
 
-		//listasalida.add(bici1);
+		listasalida.add(bici1);
 		listasalida.add(reloj);
 		listasalida.add(ciclista);
 
