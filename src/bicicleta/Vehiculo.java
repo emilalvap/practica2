@@ -1,7 +1,10 @@
 package bicicleta;
 
 import interfaceMain.InterfaceEjecuta;
-
+/**
+ * Clase que representa un vehículo en la realidad
+ *
+ */
 public class Vehiculo implements InterfaceEjecuta {
 	protected float velocidad;
 	protected int numruedas;

@@ -1,8 +1,15 @@
 package persona;
 
+import interfaceMain.InterfaceEjecuta;
 import bicicleta.*;
 
-public class Ciclista extends Persona {
+
+/**
+ * Esta clase representa una especializacion de persona , ciclista , es decir , persona que conduce una bicicleta y conoce su interfaz
+ * @author Juan
+ *
+ */
+public class Ciclista extends Persona implements InterfaceEjecuta  {
 	private float cadencia; // numero de pedaladas por segundo
 	private Bicicleta bici;
 

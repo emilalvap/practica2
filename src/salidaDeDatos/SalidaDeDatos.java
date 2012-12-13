@@ -10,6 +10,12 @@ public class SalidaDeDatos implements InterfaceSalida
 {
 
 	@Override
+	public void muestra(String mensaje, String formato) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/*@Override
 	public void muestra(Object obj) {
 		// TODO Auto-generated method stub
 		
@@ -27,7 +33,7 @@ public class SalidaDeDatos implements InterfaceSalida
 			System.out.println(((Ciclista) obj).getBici().getVelocidad());
 		}
 		
-	}
+	}*/
 	/*
 	public void muestraBicicleta(Bicicleta bici)
 	{

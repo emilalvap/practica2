@@ -2,7 +2,12 @@ package persona;
 
 import interfaceMain.InterfaceEjecuta;
 
-public class Persona implements InterfaceEjecuta {
+/**
+ * 
+ * Esta clase representa una persona física con todos su atributos
+ *
+ */
+public class Persona {
 	protected float peso;
 	protected float altura;
 
@@ -46,10 +51,6 @@ public class Persona implements InterfaceEjecuta {
 		return altura;
 	}
 
-	@Override
-	public void ejecuta() {
 	
-
-	}
 
 }

@@ -1,5 +1,9 @@
 package bicicleta;
-
+/**
+ * 
+ * Bicicleta estándar . Hereda de Vehiculo
+ *
+ */
 public class Bicicleta extends Vehiculo {
 
 	// almacena el numero de pedales, ya que puede haber tandems

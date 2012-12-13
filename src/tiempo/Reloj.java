@@ -1,5 +1,9 @@
 package tiempo;
-
+/**
+ * Clase especializada de contador que maneja horas , minutos y segundos
+ * @author Juan
+ *
+ */
 public class Reloj extends Contador {
 
 	Milisegundo m = new Milisegundo();

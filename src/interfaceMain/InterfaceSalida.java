@@ -1,9 +1,13 @@
 package interfaceMain;
 
 
-
+/**
+ * 
+ * Interfaz de OBJETOS QUE QUIEREN MOSTRARSE
+ *
+ */
 public interface InterfaceSalida {
 	
-	void muestra(Object obj);
+	void muestra(String mensaje,String formato);
 
-}// brujeria
+}

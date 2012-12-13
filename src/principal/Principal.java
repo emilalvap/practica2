@@ -51,7 +51,7 @@ public class Principal {
 			}
 			for (Object c : listasalida) {
 
-				salida.muestra(c);
+				//salida.muestra(c);
 			}
 
 		}

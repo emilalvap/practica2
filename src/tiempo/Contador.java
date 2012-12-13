@@ -2,6 +2,11 @@ package tiempo;
 
 import interfaceMain.InterfaceEjecuta;
 
+/**
+ * Esta clase representa un contador estandar de un intervalo de tiempo variable.
+ * @author Juan
+ *
+ */
 public class Contador implements InterfaceEjecuta
 
 {
