@@ -1,6 +1,6 @@
 package persona;
 
-import salidaDeDatos.SalidaDeDatos;
+
 import interfaceMain.InterfaceEjecuta;
 import interfaceMain.InterfaceSalida;
 import bicicleta.*;

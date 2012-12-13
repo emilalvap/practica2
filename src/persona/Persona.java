@@ -1,6 +1,6 @@
 package persona;
 
-import interfaceMain.InterfaceEjecuta;
+
 
 /**
  * 

@@ -3,7 +3,7 @@ package bicicleta;
 
 /**
  * Clase que representa un vehículo en la realidad
- * @author Juan Carlos Marco y Juan Luis Pérez
+ * @author Juan Carlos Marco y Juan Luis Perez
  */
 public class Vehiculo  {
 	protected float velocidad;
