@@ -4,7 +4,10 @@ package tiempo;
  * @author Juan Carlos Marco y Juan Luis Pérez
  *
  */
-public class Reloj extends Contador {
+import interfaceMain.InterfaceEjecuta;
+import interfaceMain.InterfaceSalida;
+
+public class Reloj extends Contador  implements InterfaceEjecuta,InterfaceSalida{
 
 	Milisegundo m = new Milisegundo();
 	Contador segundo = new Contador();
@@ -62,6 +65,10 @@ public class Reloj extends Contador {
 
 		cuentaReloj();
 		
+	}
+	public void muestra()
+	{
+		mostrarReloj();
 	}
 
 }

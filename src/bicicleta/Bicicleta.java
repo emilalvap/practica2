@@ -1,10 +1,13 @@
 package bicicleta;
+
+import interfaceMain.InterfaceEjecuta;
+import interfaceMain.InterfaceSalida;
 /**
  * 
  * Bicicleta estándar . Hereda de Vehiculo
  * @author Juan Carlos Marco y Juan Luis Pérez
  */
-public class Bicicleta extends Vehiculo {
+public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceSalida{
 
 	// almacena el numero de pedales, ya que puede haber tandems
 	protected int numpedales = 2;
@@ -282,6 +285,12 @@ public class Bicicleta extends Vehiculo {
 
 	public void setRadiorueda(double radiorueda) {
 		this.radiorueda = radiorueda;
+	}
+
+	@Override
+	public void muestra() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

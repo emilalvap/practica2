@@ -1,11 +1,11 @@
 package bicicleta;
 
-import interfaceMain.InterfaceEjecuta;
+
 /**
  * Clase que representa un vehículo en la realidad
  * @author Juan Carlos Marco y Juan Luis Pérez
  */
-public class Vehiculo implements InterfaceEjecuta {
+public class Vehiculo  {
 	protected float velocidad;
 	protected int numruedas;
 
@@ -99,11 +99,6 @@ public class Vehiculo implements InterfaceEjecuta {
 		return espacio;
 	}
 
-	@Override
-	public void ejecuta() {
-		
-
-		
-	}
+	
 
 }

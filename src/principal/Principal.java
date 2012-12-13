@@ -41,19 +41,20 @@ public class Principal {
 		listaejecuta.add(ciclista);
 
 		//listasalida.add(bici1);
-		//listasalida.add(reloj);
+		listasalida.add(reloj);
 		listasalida.add(ciclista);
 
 	}
 
 	public void ejecuta() {
 
-		SalidaDeDatos salida = new SalidaDeDatos();
+		//SalidaDeDatos salida = new SalidaDeDatos();
 
 		while (true) {
 			for (Object c : listaejecuta) {
 				((InterfaceEjecuta) c).ejecuta();
 			}
+			
 			for (Object c : listasalida) {
 
 				((InterfaceSalida) c).muestra();
