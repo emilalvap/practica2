@@ -67,16 +67,26 @@ public class SalidaDeDatos
 		}
 		System.out.println(mensajefinal.toString());
 	}
+	/**
+	 * este metodo recibe un String con los datos a mostrar y con el formato inclusive y es capaz de
+	 * sacarlo formateado de dicha forma
+	 * @param mensaje contiene el mensaje a mostrar y el formato a usar
+	 * funciona de la siguiente manera : mensaje = "mensaje#formato"
+	 */
 	public void mostrarPorPantalla(String mensaje)
 	{
 		
 		StringBuffer mensajefinal = new StringBuffer();
 		int posicionempiezaformato = 0;
+		
+		//buscamos la posicion a partir de la cual empieza el formato
 		while(posicionempiezaformato < mensaje.length() && mensaje.charAt(posicionempiezaformato) !='#')
 		{
 			posicionempiezaformato++;
 			
 		}
+		//como ya sabemos donde empieza el formato, ahora solo comparamos para sacar la salida formateada
+		//con dicho formato
 		switch(mensaje.substring(posicionempiezaformato + 1).toString())
 		{
 			case "velocidad": 
@@ -108,7 +118,10 @@ public class SalidaDeDatos
 		}
 		System.out.println(mensajefinal.toString());
 	}
-	
+	/**
+	 * este metodo hace un for each del arraylist dela propia clase y ejecuta el metodo muestra de los 
+	 * objetos que contiene
+	 */
 	public void mostrarObjetos() 
 	{
 		for (Object listaobjetos : milista) 
