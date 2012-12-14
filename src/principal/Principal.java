@@ -57,6 +57,8 @@ public class Principal {
 		while (true) {
 			for (Object c : listaejecuta) {
 				((InterfaceEjecuta) c).ejecuta();
+				
+				
 			}
 			
 			for (Object c : listasalida) {

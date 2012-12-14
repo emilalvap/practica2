@@ -1,5 +1,7 @@
 package bicicleta;
 
+import java.util.Scanner;
+
 import salidaDeDatos.SalidaDeDatos;
 import interfaceMain.InterfaceEjecuta;
 import interfaceMain.InterfaceSalida;
@@ -211,7 +213,7 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 				aceleracion, 1);
 		espacio = calcularEspacioRecorrido(getVelocidad(), 1,
 				aceleracion);
-		espaciorecorrido+=espacio;
+		espaciorecorrido = espaciorecorrido + espacio;
 
 		acelerar(velocidad_final);
 	}
@@ -241,9 +243,15 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	 *            'a' = aumentar , 'd' = disminuir
 	 */
 	public void setPinon(char accion) {
+		// Lectura de un byte
+		//int cara = System.in.read();
+		// Lectura de hasta 10 bytes
+		//byte [] buffer = new byte[10];
+		//System.in.read(byte);
 		// aumentamos el pinon
+		
 		if (accion == 'a') {
-			if (pinonact < dientespinon.length) {
+			if (pinonact < dientespinon.length-1) {
 				pinonact++;
 			}
 		}
@@ -264,13 +272,13 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	public void setPlato(char accion) {
 		// aumentamos el pinon
 		if (accion == 'a') {
-			if (platoact < dientesplato.length) {
+			if (platoact < dientesplato.length-1) {
 				platoact++;
 			}
 		}
 		// disminuimos el pinon
 		if (accion == 'd') {
-			if (platoact > 1) {
+			if (platoact > 0) {
 				platoact--;
 			}
 		}
@@ -278,9 +286,12 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 
 	@Override
 	public void ejecuta() {
-		
-
-	
+		/*
+		setPinon('a');
+		setPlato('a');
+		setRelacionTransmision(dientespinon[getPinonAct()]/dientesplato[getPlatoAct()]);
+		setEspacioporpedalada((Math.PI * radiorueda) * relaciontransmision);
+	*/
 	}
 
 	/**
@@ -314,26 +325,27 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 		this.numsillin = numsillin;
 	}
 
-	public int getPinonact() {
+	public int getPinonAct() {
 		return pinonact;
 	}
 
-	public void setPinonact(int pinonact) {
+	public void setPinonAct(int pinonact) {
 		this.pinonact = pinonact;
 	}
 
-	public int getPlatoact() {
+	public int getPlatoAct() {
 		return platoact;
 	}
 
-	public void setPlatoact(int platoact) {
+	public void setPlatoAct(int platoact) {
 		this.platoact = platoact;
 	}
 
-	public int[] getDientesplato() {
+	public int[] getDientesPlato() {
 		return dientesplato;
 	}
 
+	/*
 	public void setDientesplato(int[] dientesplato) {
 		this.dientesplato = dientesplato;
 	}
@@ -344,13 +356,13 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 
 	public void setDientespinon(int[] dientespinon) {
 		this.dientespinon = dientespinon;
-	}
+	}*/
 
-	public double getRelaciontransmision() {
+	public double getRelacionTransmision() {
 		return relaciontransmision;
 	}
 
-	public void setRelaciontransmision(double relaciontransmision) {
+	public void setRelacionTransmision(double relaciontransmision) {
 		this.relaciontransmision = relaciontransmision;
 	}
 
@@ -358,7 +370,7 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 		return radiorueda;
 	}
 
-	public void setRadiorueda(double radiorueda) {
+	public void setRadioRueda(double radiorueda) {
 		this.radiorueda = radiorueda;
 	}
 
