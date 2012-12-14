@@ -11,6 +11,7 @@ import interfaceMain.InterfaceSalida;
 public class SalidaDeDatos 
 {
 
+	//este arraylist, contiene todos los objetos que se mostraran en el metodo mostrarObjeto()
 	ArrayList<Object>  milista = new ArrayList<Object>();
 		
 	public SalidaDeDatos()
@@ -66,7 +67,47 @@ public class SalidaDeDatos
 		}
 		System.out.println(mensajefinal.toString());
 	}
-
+	public void mostrarPorPantalla(String mensaje)
+	{
+		
+		StringBuffer mensajefinal = new StringBuffer();
+		int posicionempiezaformato = 0;
+		while(posicionempiezaformato < mensaje.length() && mensaje.charAt(posicionempiezaformato) !='#')
+		{
+			posicionempiezaformato++;
+			
+		}
+		switch(mensaje.substring(posicionempiezaformato + 1).toString())
+		{
+			case "velocidad": 
+			{
+				mensajefinal.append("Velocidad actual:" + mensaje.substring(0, posicionempiezaformato) + " m/s ");
+				break;
+			}
+			
+			case "hh:mm:ss": 
+			{
+				int caractermensaje  = 0;
+				while(caractermensaje < posicionempiezaformato)
+				{
+					if(mensaje.charAt(caractermensaje) == ' ')
+					{
+						mensajefinal.insert(caractermensaje,":");
+					
+					}
+					else
+					{
+						mensajefinal.insert(caractermensaje,mensaje.charAt(caractermensaje));
+					}
+				
+					caractermensaje++;
+				}	
+			
+				break;
+			}
+		}
+		System.out.println(mensajefinal.toString());
+	}
 	
 	public void mostrarObjetos() 
 	{

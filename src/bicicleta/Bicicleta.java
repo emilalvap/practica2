@@ -405,7 +405,7 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 		SalidaDeDatos output= new SalidaDeDatos();
 		String mensaje;
 		mensaje = String.valueOf(getVelocidad());
-		output.mostrarPorPantalla(mensaje, "velocidad");
+		output.mostrarPorPantalla(mensaje+"#velocidad");
 		
 	}
 
