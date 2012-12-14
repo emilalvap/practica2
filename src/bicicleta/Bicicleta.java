@@ -10,7 +10,8 @@ import interfaceMain.InterfaceSalida;
  * Bicicleta estándar . Hereda de Vehiculo
  * @author Juan Carlos Marco y Juan Luis Perez
  */
-public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceSalida{
+public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceSalida
+{
 
 	// almacena el numero de pedales, ya que puede haber tandems
 	protected int numpedales = 2;
@@ -37,7 +38,8 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	// EspacioporcadaPedalada = RecorridoLinealDelaRueda * RelaciondeTransmisin
 	private double espacioporpedalada;
 
-	public Bicicleta(int numeropinones, int numeroplatos, double radiorueda,int midientepinon[], int midienteplato[]) {
+	public Bicicleta(int numeropinones, int numeroplatos, double radiorueda,int midientepinon[], int midienteplato[]) 
+	{
 
 		super();
 		int i = 0;
@@ -65,7 +67,8 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	 * 
 	 * @return numpedales
 	 */
-	public int getPedales() {
+	public int getPedales() 
+	{
 		return numpedales;
 	}
 
@@ -74,7 +77,8 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	 * 
 	 * @return
 	 */
-	public float getPeso() {
+	public float getPeso() 
+	{
 		return peso;
 	}
 
@@ -83,7 +87,8 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	 * 
 	 * @return
 	 */
-	public int getPinon() {
+	public int getPinon() 
+	{
 		return pinonact;
 	}
 
@@ -92,7 +97,8 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	 * 
 	 * @return
 	 */
-	public int getPlato() {
+	public int getPlato() 
+	{
 		return pinonact;
 	}
 
@@ -107,7 +113,8 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	 *            sirve para introducir el array de
 	 *            pinones al cual se le va a asignar el numero de dientes
 	 */
-	public void setAsignaNumeroDientesPinon( int numerodientes[]) {
+	public void setAsignaNumeroDientesPinon( int numerodientes[]) 
+	{
 		int i = 0;
 		boolean compruebadientes = true;
 		if (dientespinon.length == numerodientes.length) 
@@ -154,7 +161,8 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	 * asigna a los platos de la bicicleta, el numero de dientes del array
 	 * @param numerodientes trae el numero de dientes por plato
 	 */
-	public void setAsignaNumeroDientesPlato( int numerodientes[]) {
+	public void setAsignaNumeroDientesPlato( int numerodientes[]) 
+	{
 		int i = 0;
 		boolean compruebadientes = true;
 		if (dientesplato.length == numerodientes.length) 
@@ -224,7 +232,8 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	 * 
 	 * @param numero
 	 */
-	public void setPedales(int numero) {
+	public void setPedales(int numero) 
+	{
 		numpedales = numero;
 	}
 
@@ -232,7 +241,8 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	 * este metodo asigna un peso
 	 * 
 	 */
-	public void setPeso(float pesos) {
+	public void setPeso(float pesos) 
+	{
 		peso = pesos;
 	}
 
@@ -242,7 +252,8 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	 * @param accion
 	 *            'a' = aumentar , 'd' = disminuir
 	 */
-	public void setPinon(char accion) {
+	public void setPinon(char accion) 
+	{
 		// Lectura de un byte
 		//int cara = System.in.read();
 		// Lectura de hasta 10 bytes
@@ -250,14 +261,18 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 		//System.in.read(byte);
 		// aumentamos el pinon
 		
-		if (accion == 'a') {
-			if (pinonact < dientespinon.length-1) {
+		if (accion == 'a') 
+		{
+			if (pinonact < dientespinon.length-1) 
+			{
 				pinonact++;
 			}
 		}
 		// disminuimos el pinon
-		if (accion == 'd') {
-			if (pinonact > 0) {
+		if (accion == 'd') 
+		{
+			if (pinonact > 0) 
+			{
 				pinonact--;
 			}
 		}
@@ -269,23 +284,31 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	 * @param accion
 	 *            'a' = aumentar , 'd' = disminuir
 	 */
-	public void setPlato(char accion) {
+	public void setPlato(char accion) 
+	{
 		// aumentamos el pinon
-		if (accion == 'a') {
-			if (platoact < dientesplato.length-1) {
+		if (accion == 'a') 
+		{
+			if (platoact < dientesplato.length-1) 
+			{
 				platoact++;
 			}
 		}
 		// disminuimos el pinon
-		if (accion == 'd') {
+		if (accion == 'd') 
+		{
 			if (platoact > 0) {
 				platoact--;
 			}
 		}
 	}
-
+	/**
+	 * este metodo esta heredado de la clase InterfazEjecuta, y todo lo que haya en el, se ejecutara 
+	 * cuando se realice el for each de la lista correspondiente
+	 */
 	@Override
-	public void ejecuta() {
+	public void ejecuta() 
+	{
 		/*
 		setPinon('a');
 		setPlato('a');
@@ -373,7 +396,10 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	public void setRadioRueda(double radiorueda) {
 		this.radiorueda = radiorueda;
 	}
-
+	/**
+	 * este metodo esta heredado de la clase InterfazSalida, y todo lo que haya en el, se mostrara 
+	 * cuando se realice el for each de la lista correspondiente
+	 */
 	@Override
 	public void muestra() {
 		SalidaDeDatos output= new SalidaDeDatos();

@@ -7,29 +7,33 @@ package persona;
  * Esta clase representa una persona física con todos su atributos
  * @author Juan Carlos Marco y Juan Luis Pérez
  */
-public class Persona {
+public class Persona 
+{
 	protected float peso;
 	protected float altura;
 
-	public void persona() {
+	public void persona() 
+	{
 
 	}
 
 	/**
 	 * asigna el peso
 	 * 
-	 * @param miPeso
+	 * @param el peso
 	 */
-	public void setPeso(float miPeso) {
+	public void setPeso(float miPeso) 
+	{
 		peso = miPeso;
 	}
 
 	/**
 	 * devuelve el peso
 	 * 
-	 * @return
+	 * @return devuelve el peso
 	 */
-	public float getPeso() {
+	public float getPeso() 
+	{
 		return peso;
 	}
 
@@ -45,7 +49,7 @@ public class Persona {
 	/**
 	 * devuelve la altura
 	 * 
-	 * @return
+	 * @return devuelve la altura
 	 */
 	public float getAltura() {
 		return altura;

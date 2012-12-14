@@ -1,10 +1,11 @@
 package tiempo;
 /**
- * 
+ * esta clase cuenta los milisegundos actuales de ejecucion.
  * @author Juan Carlos Marco y Juan Luis Pérez
  *
  */
-public class Milisegundo {
+public class Milisegundo 
+{
 	private long milisegundosactuales;
 	private long milisegundos;
 
@@ -13,29 +14,29 @@ public class Milisegundo {
 	 * 
 	 * @return Si ha transcurrido un segundo
 	 */
-	public int devuelveSegundo() {
-		milisegundosactuales = System.currentTimeMillis();// Variable para
-															// obtener el tiempo
-															// al abrir el
-															// programa
+	public int devuelveSegundo() 
+	{
+		//variable para obtener el tiempo al iniciar el metodo
+		milisegundosactuales = System.currentTimeMillis();
 		int segundo = 0;
-		while (segundo < 2) {
-			milisegundos = System.currentTimeMillis();// Metodo para obtener el
-														// tiempo actual
-			if (milisegundosactuales == milisegundos) {
-				milisegundosactuales = milisegundos + 1000;// 1000 milisegundos
-															// = 1 segundo
+		while (segundo < 2) 
+		{
+			// Metodo para obtener el tiempo actual
+			
+			milisegundos = System.currentTimeMillis();
+			if (milisegundosactuales == milisegundos) 
+			{
+				//1000 milisegundos = 1 segundo
+				milisegundosactuales = milisegundos + 1000;
 
 				// System.out.println(segundo);
 				segundo++;
-			} else if ((milisegundosactuales + 1000) < milisegundos)// Metodo
-																	// para
-																	// evitar
-																	// que se
-																	// detenga
-																	// el
-																	// contador
+			} 
+			//metodo para evitar que se detenga el contador
+			else if ((milisegundosactuales + 1000) < milisegundos)
+			{
 				milisegundosactuales = System.currentTimeMillis();
+			}
 		}
 		return 1;
 

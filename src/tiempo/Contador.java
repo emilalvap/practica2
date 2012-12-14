@@ -20,12 +20,16 @@ public class Contador implements InterfaceEjecuta
 	 *            que se quiere establecer
 	 * @return 1 cuando se alcanza el limite
 	 */
-	public int pasoUnidad(int limite) {
+	public int pasoUnidad(int limite) 
+	{
 		int carry = 0;
-		if (unidad == limite) {
+		if (unidad == limite) 
+		{
 			unidad = 0;
 			carry = 1;
-		} else {
+		} 
+		else 
+		{
 			carry = 0;
 		}
 		return carry;
@@ -37,7 +41,8 @@ public class Contador implements InterfaceEjecuta
 	 * 
 	 * @param miunidad
 	 */
-	public void incremento(int miunidad) {
+	public void incremento(int miunidad) 
+	{
 		unidad = unidad + miunidad;
 	}
 
@@ -46,12 +51,14 @@ public class Contador implements InterfaceEjecuta
 	 * 
 	 * @return unidad
 	 */
-	public int getUnidad() {
+	public int getUnidad() 
+	{
 		return unidad;
 	}
 
 	@Override
-	public void ejecuta() {
+	public void ejecuta() 
+	{
 		// TODO Auto-generated method stub
 
 	}

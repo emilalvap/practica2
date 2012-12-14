@@ -14,12 +14,14 @@ import bicicleta.Bicicleta;
  * @author Juan Carlos Marco y Juan Luis Pérez
  *
  */
-public class Principal {
+public class Principal 
+{
 
 	private ArrayList<Object> listaejecuta;
 	private ArrayList<Object> listasalida;
 
-	public static void main(String args[]) {
+	public static void main(String args[]) 
+	{
 
 		Principal p = new Principal();
 		p.inicia();
@@ -28,7 +30,8 @@ public class Principal {
 
 	}
 
-	public void inicia() {
+	public void inicia() 
+	{
 		listaejecuta = new ArrayList<Object>();
 		listasalida = new ArrayList<Object>();
 //(int numeropinones, int numeroplatos, double radiorueda,int midientepinon[], int midienteplato[]) {
@@ -50,18 +53,22 @@ public class Principal {
 
 	}
 
-	public void ejecuta() {
+	public void ejecuta() 
+	{
 
 		//SalidaDeDatos salida = new SalidaDeDatos();
 
-		while (true) {
-			for (Object c : listaejecuta) {
+		while (true) 
+		{
+			for (Object c : listaejecuta) 
+			{
 				((InterfaceEjecuta) c).ejecuta();
 				
 				
 			}
 			
-			for (Object c : listasalida) {
+			for (Object c : listasalida) 
+			{
 
 				((InterfaceSalida) c).muestra();
 			}
@@ -69,7 +76,8 @@ public class Principal {
 		}
 	}
 
-	public void finaliza() {
+	public void finaliza() 
+	{
 
 	}
 

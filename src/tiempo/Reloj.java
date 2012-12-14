@@ -8,7 +8,8 @@ import salidaDeDatos.SalidaDeDatos;
 import interfaceMain.InterfaceEjecuta;
 import interfaceMain.InterfaceSalida;
 
-public class Reloj extends Contador  implements InterfaceEjecuta,InterfaceSalida{
+public class Reloj extends Contador  implements InterfaceEjecuta,InterfaceSalida
+{
 
 	Milisegundo m = new Milisegundo();
 	Contador segundo = new Contador();
@@ -19,7 +20,8 @@ public class Reloj extends Contador  implements InterfaceEjecuta,InterfaceSalida
 	 * este metodo realiza la operacion de ir incrementando segundos, minutos y
 	 * horas
 	 */
-	public void cuentaReloj() {
+	public void cuentaReloj() 
+	{
 		segundo.incremento(m.devuelveSegundo());
 		minuto.incremento(segundo.pasoUnidad(60));
 		hora.incremento(minuto.pasoUnidad(60));
@@ -29,7 +31,8 @@ public class Reloj extends Contador  implements InterfaceEjecuta,InterfaceSalida
 	/**
 	 * este metodo muestra por consola el cronometraje actual
 	 */
-	public void mostrarReloj() {
+	public void mostrarReloj() 
+	{
 		int tiempo[] = new int[3];
 		tiempo = devuelveTiempo();
 		System.out.println("hora " + tiempo[2] + " minuto " + tiempo[1]
@@ -42,7 +45,8 @@ public class Reloj extends Contador  implements InterfaceEjecuta,InterfaceSalida
 	 * 
 	 * @return
 	 */
-	public int[] devuelveTiempo() {
+	public int[] devuelveTiempo() 
+	{
 		int tiempo[] = new int[3];
 		tiempo[0] = segundo.getUnidad();
 		tiempo[1] = minuto.getUnidad();
@@ -55,18 +59,27 @@ public class Reloj extends Contador  implements InterfaceEjecuta,InterfaceSalida
 	 * 
 	 * @return
 	 */
-	public int devuelveSegundos() {
+	public int devuelveSegundos() 
+	{
 		int segundos = 0;
 		segundos = segundo.getUnidad() + minuto.getUnidad() * 60
 				+ hora.getUnidad() * 3600;
 		return segundos;
 	}
-
-	public void ejecuta() {
+	/**
+	 * este metodo esta heredado de la clase InterfazEjecuta, y todo lo que haya en el, se ejecutara 
+	 * cuando se realice el for each de la lista correspondiente
+	 */
+	public void ejecuta() 
+	{
 
 		cuentaReloj();
 		
 	}
+	/**
+	 * este metodo esta heredado de la clase InterfazSalida, y todo lo que haya en el, se mostrara 
+	 * cuando se realice el for each de la lista correspondiente
+	 */
 	public void muestra()
 	{
 		//mostrarReloj();
