@@ -20,6 +20,8 @@ public class Principal
 	private ArrayList<Object> listaejecuta;
 	private ArrayList<Object> listasalida;
 
+	SalidaDeDatos salida;
+	
 	public static void main(String args[]) 
 	{
 
@@ -56,8 +58,8 @@ public class Principal
 	public void ejecuta() 
 	{
 
-		//SalidaDeDatos salida = new SalidaDeDatos();
-
+		
+		salida = new SalidaDeDatos(listasalida);
 		while (true) 
 		{
 			for (Object c : listaejecuta) 
@@ -67,11 +69,7 @@ public class Principal
 				
 			}
 			
-			for (Object c : listasalida) 
-			{
-
-				((InterfaceSalida) c).muestra();
-			}
+			salida.mostrarObjetos();
 
 		}
 	}

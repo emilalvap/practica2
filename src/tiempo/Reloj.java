@@ -11,7 +11,7 @@ import interfaceMain.InterfaceSalida;
 public class Reloj extends Contador  implements InterfaceEjecuta,InterfaceSalida
 {
 
-	Milisegundo m = new Milisegundo();
+	Milisegundo milisegundo = new Milisegundo();
 	Contador segundo = new Contador();
 	Contador minuto = new Contador();
 	Contador hora = new Contador();
@@ -22,7 +22,7 @@ public class Reloj extends Contador  implements InterfaceEjecuta,InterfaceSalida
 	 */
 	public void cuentaReloj() 
 	{
-		segundo.incremento(m.devuelveSegundo());
+		segundo.incremento(milisegundo.devuelveSegundo());
 		minuto.incremento(segundo.pasoUnidad(60));
 		hora.incremento(minuto.pasoUnidad(60));
 

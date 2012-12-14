@@ -1,13 +1,29 @@
 package salidaDeDatos;
+import java.util.ArrayList;
 
+import interfaceMain.InterfaceSalida;
 /**Esta clase sera la encargada de mostrar la informacion al usuario
  * 
  * @author Juan Carlos Marco y Juan Luis Pérez
  *
  */
+
 public class SalidaDeDatos 
 {
 
+	ArrayList<Object>  milista = new ArrayList<Object>();
+		
+	public SalidaDeDatos()
+	{
+		
+		 
+	}
+	
+	public SalidaDeDatos(ArrayList<Object> lista)
+	{
+		
+		 milista = lista;
+	}
 	/**
 	 * este metodo saca por pantalla el mensaje introducido con el formato indicado, el cual debe de existir
 	 * en el propio metodo
@@ -49,6 +65,18 @@ public class SalidaDeDatos
 			}
 		}
 		System.out.println(mensajefinal.toString());
+	}
+
+	
+	public void mostrarObjetos() 
+	{
+		for (Object listaobjetos : milista) 
+		{
+
+			((InterfaceSalida) listaobjetos).muestra();
+			
+		}
+		
 	}
 	
 }
