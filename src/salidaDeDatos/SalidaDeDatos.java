@@ -35,7 +35,7 @@ public class SalidaDeDatos
 	{
 		
 		StringBuffer mensajefinal = new StringBuffer();
-		
+	
 		switch(formato)
 		{
 			case "velocidad": 

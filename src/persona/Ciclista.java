@@ -19,8 +19,9 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 	
 	public Ciclista(Bicicleta nueva_bici) 
 	{
+		
 		setBici(nueva_bici);
-		cadencia = 1;
+		cadencia = 2;
 
 	}
 /**
@@ -29,16 +30,10 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
  * el pedaleo no tendrá efecto
  * 
  */
-	public void pedalear() 
+	public void pedalear(float micadencia) 
 	{
 
-		float velocidad_maxima;
-		
-		velocidad_maxima= (float) (bici.getEspacioporpedalada() / cadencia) ;
-		if (bici.getVelocidad() < velocidad_maxima)
-		{
-			getBici().darPedalada(cadencia);
-		}
+		getBici().setCadencia(micadencia);
 		
 	}
 
@@ -86,8 +81,8 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 	 */
 	public void ejecuta() 
 	{
-
-		pedalear();
+		bici.setCadencia(cadencia);
+		pedalear(cadencia);
 		cambiarPlato('a');
 		cambiarPinon('a');
 
@@ -104,9 +99,9 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 	/** asigna bicicleta al ciclista
 	 * @param bici the bici to set
 	 */
-	public void setBici(Bicicleta bici) 
+	public void setBici(Bicicleta mibici) 
 	{
-		this.bici = bici;
+		this.bici = mibici;
 	}
 	/**
 	 * este metodo esta heredado de la clase InterfazSalida, y todo lo que haya en el, se mostrara 
