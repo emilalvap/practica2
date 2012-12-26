@@ -83,8 +83,8 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 	{
 		bici.setCadencia(cadencia);
 		pedalear(cadencia);
-		cambiarPlato('a');
-		cambiarPinon('a');
+		//cambiarPlato('d');
+	    cambiarPinon('a');
 
 	}
 

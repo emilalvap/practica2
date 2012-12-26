@@ -1,7 +1,6 @@
 package bicicleta;
 
  
-import java.util.Scanner;
 
 import salidaDeDatos.SalidaDeDatos;
 import interfaceMain.InterfaceEjecuta;
@@ -61,7 +60,7 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 		
 		setAsignaNumeroDientesPlato( midienteplato);
 		
-		setRadioRueda((float)0.5);
+		setRadioRueda((float)0.35);
 	}
 
 	/**
@@ -223,7 +222,7 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 			
 		}
 		velocidad = (float) (( 2 *Math.PI *getRadioRueda()  * getRelacionTransmision() )* getCadencia());
-
+		espaciorecorrido = espaciorecorrido + velocidad;
 		//asignamos la relacion de marchas actuales
 		setRelacionTransmision(pinonact,platoact); 
 		
@@ -426,6 +425,10 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 		String mensaje;
 		mensaje = String.valueOf(getVelocidad());
 		output.mostrarPorPantalla(mensaje+"#velocidad");
+		mensaje = String.valueOf(getEspacioRecorrido());
+	
+		output.mostrarPorPantalla(mensaje+"#distancia");
+		
 		
 	}
 	public void setCadencia(float micadencia)
