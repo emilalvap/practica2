@@ -68,6 +68,7 @@ public class Principal
 				
 				
 			}
+			//salida.mostrarObjetos();
 			for (Object c : listasalida) 
 			{
 				((InterfaceSalida) c).muestra();
