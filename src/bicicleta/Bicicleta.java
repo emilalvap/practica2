@@ -83,25 +83,9 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 		return peso;
 	}
 
-	/**
-	 * devuelve el pinon activo
-	 * 
-	 * @return
-	 */
-	public int getPinon() 
-	{
-		return pinonact;
-	}
+	
 
-	/**
-	 * devuelve el plato activo
-	 * 
-	 * @return
-	 */
-	public int getPlato() 
-	{
-		return pinonact;
-	}
+	
 
 	/**
 	 * asigna el numero de dientes correspondiente al pinon o plato,
@@ -282,7 +266,10 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 			}
 		}
 	}
-
+	public float getDireccion()
+	{
+		return direccion;
+	}
 	/**
 	 * sirve para aumentar o disminuir el plato que se quiere usar
 	 * 
@@ -376,7 +363,12 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	public int getDientesPinon(int pinon) {
 		return dientespinon[pinon];
 	}
-
+	public int[] getDientesPlato() {
+		return dientesplato;
+	}
+	public int[] getDientesPinon() {
+		return dientespinon;
+	}
 	/*
 	public void setDientesplato(int[] dientesplato) {
 		this.dientesplato = dientesplato;
