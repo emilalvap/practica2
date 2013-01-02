@@ -21,7 +21,7 @@ public class Principal
 	private ArrayList<Object> listasalida;
 
 	SalidaDeDatos salida;
-	
+
 	public static void main(String args[]) 
 	{
 
@@ -36,12 +36,12 @@ public class Principal
 	{
 		listaejecuta = new ArrayList<Object>();
 		listasalida = new ArrayList<Object>();
-//(int numeropinones, int numeroplatos, double radiorueda,int midientepinon[], int midienteplato[]) {
+
 
 		int dientesporpinon[] = {6,5,4,3,2,1};
 		int dientesporplato[] = {2,3,4};
 		InterfaceEjecuta bici1 = new Bicicleta(dientesporpinon.length, dientesporplato.length, 
-								1,dientesporpinon,dientesporplato);
+				1,dientesporpinon,dientesporplato);
 		InterfaceEjecuta reloj = new Reloj();
 		InterfaceEjecuta ciclista = new Ciclista((Bicicleta) bici1);
 
@@ -57,24 +57,26 @@ public class Principal
 
 	public void ejecuta() 
 	{
+		int contador=0; // Contara los segundos de ejecucion del programa
+		int limite=60;  // Se establecera el limite en SEGUNDOS de la ejecucion del programa
+		salida = new SalidaDeDatos(listasalida);
 
 		
-		salida = new SalidaDeDatos(listasalida);
-		while (true) 
+		while (contador < limite) 
 		{
+			
 			for (Object c : listaejecuta) 
 			{
 				((InterfaceEjecuta) c).ejecuta();
-				
-				
 			}
-			//salida.mostrarObjetos();
+
 			for (Object c : listasalida) 
 			{
 				((InterfaceSalida) c).muestra();
-				
-				
 			}
+
+			contador++; 
+			
 
 		}
 	}

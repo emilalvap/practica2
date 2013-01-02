@@ -22,7 +22,7 @@ public class Milisegundo
 		while (segundo < 2) 
 		{
 			// Metodo para obtener el tiempo actual
-			
+
 			milisegundos = System.currentTimeMillis();
 			if (milisegundosactuales == milisegundos) 
 			{

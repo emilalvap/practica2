@@ -55,6 +55,6 @@ public class Persona
 		return altura;
 	}
 
-	
+
 
 }

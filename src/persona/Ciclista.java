@@ -16,25 +16,25 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 	private float cadencia; // numero de pedaladas por segundo
 	private Bicicleta bici;
 
-	
+
 	public Ciclista(Bicicleta nueva_bici) 
 	{
-		
+
 		setBici(nueva_bici);
 		cadencia = 2;
 
 	}
-/**
- * Acción básica del ciclista. Mandará un mensaje a su bicicleta con las pedaladas por segundo.
- * Si ha alcanzado la velocidad máxima ( relacionada con la relaciones de piñones y demás especificaciones de la bicicleta )
- * el pedaleo no tendrá efecto
- * 
- */
+	/**
+	 * Acción básica del ciclista. Mandará un mensaje a su bicicleta con las pedaladas por segundo.
+	 * Si ha alcanzado la velocidad máxima ( relacionada con la relaciones de piñones y demás especificaciones de la bicicleta )
+	 * el pedaleo no tendrá efecto
+	 * 
+	 */
 	public void pedalear(float micadencia) 
 	{
 
 		getBici().setCadencia(micadencia);
-		
+
 	}
 
 	// asigna un rumbo que se enviara a la bicicleta
@@ -49,7 +49,7 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 	 */
 	public void cambiarPinon(char accion)
 	{
-		
+
 		if(accion=='a')
 		{
 			bici.setPinon('a');
@@ -65,7 +65,7 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 	 */
 	public void cambiarPlato(char accion)
 	{
-		
+
 		if(accion=='a')
 		{
 			bici.setPlato('a');
@@ -84,7 +84,7 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 		bici.setCadencia(cadencia);
 		pedalear(cadencia);
 		//cambiarPlato('d');
-	    cambiarPinon('a');
+		cambiarPinon('a');
 
 	}
 
@@ -109,10 +109,10 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 	 */
 	public void muestra() 
 	{
-		
-		
-				
-		
+
+
+
+
 	}
 
 }

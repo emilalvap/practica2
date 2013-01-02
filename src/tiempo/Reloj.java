@@ -74,7 +74,7 @@ public class Reloj extends Contador  implements InterfaceEjecuta,InterfaceSalida
 	{
 
 		cuentaReloj();
-		
+
 	}
 	/**
 	 * este metodo esta heredado de la clase InterfazSalida, y todo lo que haya en el, se mostrara 
@@ -83,7 +83,7 @@ public class Reloj extends Contador  implements InterfaceEjecuta,InterfaceSalida
 	public void muestra()
 	{
 		//mostrarReloj();
-		
+
 		SalidaDeDatos salida= new SalidaDeDatos();
 		int tiempo[] = new int[3];
 		tiempo = devuelveTiempo();

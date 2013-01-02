@@ -13,17 +13,17 @@ public class SalidaDeDatos
 
 	//este arraylist, contiene todos los objetos que se mostraran en el metodo mostrarObjeto()
 	ArrayList<Object>  milista = new ArrayList<Object>();
-		
+
 	public SalidaDeDatos()
 	{
-		
-		 
+
+
 	}
-	
+
 	public SalidaDeDatos(ArrayList<Object> lista)
 	{
-		
-		 milista = lista;
+
+		milista = lista;
 	}
 	/**
 	 * este metodo saca por pantalla el mensaje introducido con el formato indicado, el cual debe de existir
@@ -33,37 +33,37 @@ public class SalidaDeDatos
 	 */
 	public void mostrarPorPantalla(String mensaje,String formato)
 	{
-		
+
 		StringBuffer mensajefinal = new StringBuffer();
-	
+
 		switch(formato)
 		{
-			case "velocidad": 
+		case "velocidad": 
+		{
+			mensajefinal.append("Velocidad actual:" + mensaje + " m/s ");
+			break;
+		}
+
+		case "hh:mm:ss": 
+		{
+			int i = 0;
+			while(i<mensaje.length())
 			{
-				mensajefinal.append("Velocidad actual:" + mensaje + " m/s ");
-				break;
-			}
-			
-			case "hh:mm:ss": 
-			{
-				int i = 0;
-				while(i<mensaje.length())
+				if(mensaje.charAt(i) == ' ')
 				{
-					if(mensaje.charAt(i) == ' ')
-					{
-						mensajefinal.insert(i,":");
-					
-					}
-					else
-					{
-						mensajefinal.insert(i,mensaje.charAt(i));
-					}
-				
-					i++;
-				}	
-			
-				break;
-			}
+					mensajefinal.insert(i,":");
+
+				}
+				else
+				{
+					mensajefinal.insert(i,mensaje.charAt(i));
+				}
+
+				i++;
+			}	
+
+			break;
+		}
 		}
 		System.out.println(mensajefinal.toString());
 	}
@@ -75,50 +75,50 @@ public class SalidaDeDatos
 	 */
 	public void mostrarPorPantalla(String mensaje)
 	{
-		
+
 		StringBuffer mensajefinal = new StringBuffer();
 		int posicionempiezaformato = 0;
-		
+
 		//buscamos la posicion a partir de la cual empieza el formato
 		while(posicionempiezaformato < mensaje.length() && mensaje.charAt(posicionempiezaformato) !='#')
 		{
 			posicionempiezaformato++;
-			
+
 		}
 		//como ya sabemos donde empieza el formato, ahora sohttp://dnssearch.ono.es/assist.php?url=www.milanuncioeslo comparamos para sacar la salida formateada
 		//con dicho formato
 		switch(mensaje.substring(posicionempiezaformato + 1).toString())
 		{
-			case "velocidad": 
+		case "velocidad": 
+		{
+			mensajefinal.append("Velocidad actual:" + mensaje.substring(0, posicionempiezaformato) + " m/s ");
+			break;
+		}
+		case "distancia": 
+		{
+			mensajefinal.append("Distancia recorrida:" + mensaje.substring(0, posicionempiezaformato) + " m ");
+			break;
+		}
+		case "hh:mm:ss": 
+		{
+			int caractermensaje  = 0;
+			while(caractermensaje < posicionempiezaformato)
 			{
-				mensajefinal.append("Velocidad actual:" + mensaje.substring(0, posicionempiezaformato) + " m/s ");
-				break;
-			}
-			case "distancia": 
-			{
-				mensajefinal.append("Distancia recorrida:" + mensaje.substring(0, posicionempiezaformato) + " m ");
-				break;
-			}
-			case "hh:mm:ss": 
-			{
-				int caractermensaje  = 0;
-				while(caractermensaje < posicionempiezaformato)
+				if(mensaje.charAt(caractermensaje) == ' ')
 				{
-					if(mensaje.charAt(caractermensaje) == ' ')
-					{
-						mensajefinal.insert(caractermensaje,":");
-					
-					}
-					else
-					{
-						mensajefinal.insert(caractermensaje,mensaje.charAt(caractermensaje));
-					}
-				
-					caractermensaje++;
-				}	
-			
-				break;
-			}
+					mensajefinal.insert(caractermensaje,":");
+
+				}
+				else
+				{
+					mensajefinal.insert(caractermensaje,mensaje.charAt(caractermensaje));
+				}
+
+				caractermensaje++;
+			}	
+
+			break;
+		}
 		}
 		System.out.println(mensajefinal.toString());
 	}
@@ -132,9 +132,9 @@ public class SalidaDeDatos
 		{
 
 			((InterfaceSalida) listaobjetos).muestra();
-			
+
 		}
-		
+
 	}
-	
+
 }

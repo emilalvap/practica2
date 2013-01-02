@@ -19,9 +19,9 @@ public class Test
 	@Before
 	public void setUp()
 	{
-		
+
 		bici = new Bicicleta(dientesporpinon.length, dientesporplato.length, 
-								1,dientesporpinon,dientesporplato);
+				1,dientesporpinon,dientesporplato);
 		reloj = new Reloj();
 		ciclista = new Ciclista(bici);
 	}
@@ -29,7 +29,7 @@ public class Test
 	@org.junit.Test
 	public void test() 
 	{
-		
+
 		//test bicicleta
 		bici.setAsignaNumeroDientesPinon(dientesporpinon);
 		bici.setAsignaNumeroDientesPlato(dientesporplato);
@@ -46,8 +46,8 @@ public class Test
 		bici.espacioRecorridoPorCadencia(2);
 		bici.setRelacionTransmision(2, 2);
 		assertEquals(dientesporpinon[2]/dientesporplato[2],bici.getRelacionTransmision(),0);
-		
-		
+
+
 		bici.setPinon('a');
 		assertEquals(bici.getPinonAct(),2);
 		bici.setPinon('d');
@@ -56,26 +56,26 @@ public class Test
 		assertEquals(bici.getPlatoAct(),2);
 		bici.setPlato('d');
 		assertEquals(bici.getPlatoAct(),1);
-		
-		
+
+
 		bici.setEspacioPorPedalada(2);
 		assertEquals(2,bici.getEspacioRecorrido(),0);
-		
+
 		bici.setNumsillin(1);
 		assertEquals(1,bici.getNumsillin());
-		
+
 		assertEquals(dientesporplato[2],bici.getDientesPlato(2));
 		assertEquals(dientesporpinon[2],bici.getDientesPinon(2));
-		
+
 		bici.setRelacionTransmision(2, 2);
 		assertEquals(bici.getDientesPinon(2)/bici.getDientesPlato(2),bici.getRelacionTransmision(),0);
-		
+
 		bici.setRadioRueda(2);
 		assertEquals(2,bici.getRadioRueda(),0);
-		
+
 		bici.setCadencia(2);
 		assertEquals(2,bici.getCadencia(),0);
-		
+
 		//pruebas reloj
 		reloj.cuentaReloj();
 		int hora[] =  {1,0,0};
@@ -83,14 +83,14 @@ public class Test
 		assertEquals(1,reloj.devuelveSegundos(),0);
 		reloj.ejecuta();
 		assertEquals(2,reloj.devuelveSegundos(),0);
-		
+
 		//pruebas ciclista
 		ciclista.pedalear(2);
 		assertEquals(2,bici.getCadencia(),0);
-		
+
 		ciclista.setRumbo(4, bici);
 		assertEquals(4,bici.getDireccion(),0);
-		
+
 		ciclista.cambiarPinon('a');
 		assertEquals(2,bici.getPinonAct());
 		ciclista.cambiarPinon('d');
@@ -102,13 +102,13 @@ public class Test
 		ciclista.setBici(bici);
 		assertEquals(bici, ciclista.getBici());
 		/*
-	
-	
-	
+
+
+
 
 		 */
-	
-		
+
+
 	}
 
 }

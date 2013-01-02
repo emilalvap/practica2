@@ -12,7 +12,7 @@ public class Vehiculo
 
 	protected int direccion = 0;
 	protected float peso = 0;
-	
+
 	protected float espaciorecorrido;
 
 	public Vehiculo() 
@@ -108,6 +108,6 @@ public class Vehiculo
 		return espacio;
 	}
 
-	
+
 
 }
