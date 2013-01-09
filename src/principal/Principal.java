@@ -45,9 +45,10 @@ public class Principal
 		InterfaceEjecuta reloj = new Reloj();
 		InterfaceEjecuta ciclista = new Ciclista((Bicicleta) bici1);
 
-		listaejecuta.add(reloj);
-		listaejecuta.add(bici1);		
+				
 		listaejecuta.add(ciclista);
+		listaejecuta.add(reloj);
+		listaejecuta.add(bici1);
 
 		listasalida.add(reloj);
 		listasalida.add(bici1);
