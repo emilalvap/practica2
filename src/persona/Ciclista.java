@@ -15,7 +15,7 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 {
 	private float cadencia; // numero de pedaladas por segundo
 	private Bicicleta bici;
-
+	
 
 	public Ciclista(Bicicleta nueva_bici) 
 	{
@@ -75,13 +75,14 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 			bici.setPlato('d');
 		}
 	}
+	
 	/**
 	 * este metodo esta heredado de la clase InterfazEjecuta, y todo lo que haya en el, se ejecutara 
 	 * cuando se realice el for each de la lista correspondiente
 	 */
 	public void ejecuta() 
 	{
-		bici.setCadencia(cadencia);
+		//setCadencia('a'); en un futuro servira para aumentar o disminuir la cadencia 
 		pedalear(cadencia);
 		//cambiarPlato('d');
 		cambiarPinon('a');
@@ -113,6 +114,23 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 
 
 
+	}
+	public void setCadencia(char accion)
+	{
+		if(accion == 'a')
+		{
+			//if(cadencia < maximocadencia)
+			cadencia++;
+		}
+		else if(accion == 'd')
+		{
+			if(cadencia > 0)
+			{
+				cadencia--;
+			}
+			
+		}
+		bici.setCadencia(cadencia);
 	}
 
 }
