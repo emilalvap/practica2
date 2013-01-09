@@ -206,12 +206,12 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 			
 		}
 		//velocidad = (float) (( 2 *Math.PI *getRadioRueda()  * getRelacionTransmision() )* getCadencia());
-		espaciorecorrido = espaciorecorrido + velocidad;
+		
 		//asignamos la relacion de marchas actuales
 		setRelacionTransmision(pinonact,platoact); 
 		
 		setVelocidad();
-		
+		espaciorecorrido = espaciorecorrido + velocidad;
 	}
 	
 	
