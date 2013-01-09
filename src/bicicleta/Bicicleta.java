@@ -42,7 +42,7 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 
 	
 	protected float cadencia;
-	public Bicicleta(int numeropinones, int numeroplatos, double radiorueda,int midientepinon[], int midienteplato[]) 
+	public Bicicleta(int numeropinones, int numeroplatos, double radiorueda,int midientepinon[], int midienteplato[],double radio)
 	{
 
 		super();
@@ -60,7 +60,7 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 		
 		setAsignaNumeroDientesPlato( midienteplato);
 		
-		setRadioRueda((float)0.35);
+		setRadioRueda((float)radio);
 	}
 
 	/**
@@ -205,13 +205,12 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 		{			
 			
 		}
-		velocidad = (float) (( 2 *Math.PI *getRadioRueda()  * getRelacionTransmision() )* getCadencia());
+		//velocidad = (float) (( 2 *Math.PI *getRadioRueda()  * getRelacionTransmision() )* getCadencia());
 		espaciorecorrido = espaciorecorrido + velocidad;
 		//asignamos la relacion de marchas actuales
 		setRelacionTransmision(pinonact,platoact); 
 		
-		//la velocidad es el radio de la rueda * 2 PI * relacion de la transmision * cadencia de pedaleo
-		
+		setVelocidad();
 		
 	}
 	
@@ -221,6 +220,14 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 	 * 
 	 * @param numero
 	 */
+	
+	public void setVelocidad()
+	{
+		//la velocidad es el radio de la rueda * 2 PI * relacion de la transmision * cadencia de pedaleo
+		
+		velocidad = (float) (( 2 *Math.PI *getRadioRueda()  * getRelacionTransmision() )* getCadencia());
+		
+	}
 	public void setPedales(int numero) 
 	{
 		numpedales = numero;
@@ -420,6 +427,9 @@ public class Bicicleta extends Vehiculo  implements InterfaceEjecuta, InterfaceS
 		mensaje = String.valueOf(getEspacioRecorrido());
 	
 		output.mostrarPorPantalla(mensaje+"#distancia");
+		mensaje = String.valueOf(getCadencia());
+		
+		output.mostrarPorPantalla(mensaje+"#cadencia");
 		
 		
 	}

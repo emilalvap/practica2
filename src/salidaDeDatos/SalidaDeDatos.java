@@ -38,6 +38,11 @@ public class SalidaDeDatos
 
 		switch(formato)
 		{
+		case "cadencia": 
+		{
+			mensajefinal.append( mensaje + " pedaladas por segundo ");
+			break;
+		}
 		case "velocidad": 
 		{
 			mensajefinal.append("Velocidad actual:" + mensaje + " m/s ");
@@ -89,6 +94,11 @@ public class SalidaDeDatos
 		//con dicho formato
 		switch(mensaje.substring(posicionempiezaformato + 1).toString())
 		{
+		case "cadencia": 
+		{
+			mensajefinal.append(mensaje.substring(0, posicionempiezaformato) + " pedaladas por segundo ");
+			break;
+		}
 		case "velocidad": 
 		{
 			mensajefinal.append("Velocidad actual:" + mensaje.substring(0, posicionempiezaformato) + " m/s ");

@@ -38,10 +38,10 @@ public class Principal
 		listasalida = new ArrayList<Object>();
 
 
-		int dientesporpinon[] = {6,5,4,3,2,1};
-		int dientesporplato[] = {2,3,4};
+		int dientesporpinon[] = {17,16,15,14,13,12};
+		int dientesporplato[] = {36,40,44};
 		InterfaceEjecuta bici1 = new Bicicleta(dientesporpinon.length, dientesporplato.length, 
-				1,dientesporpinon,dientesporplato);
+				1,dientesporpinon,dientesporplato,0.6858);
 		InterfaceEjecuta reloj = new Reloj();
 		InterfaceEjecuta ciclista = new Ciclista((Bicicleta) bici1);
 

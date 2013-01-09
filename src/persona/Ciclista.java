@@ -19,9 +19,9 @@ public class Ciclista extends Persona implements InterfaceEjecuta,InterfaceSalid
 
 	public Ciclista(Bicicleta nueva_bici) 
 	{
-
+		cadencia = 1;
 		setBici(nueva_bici);
-		cadencia = 2;
+		
 
 	}
 	/**
