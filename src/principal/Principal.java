@@ -1,5 +1,5 @@
 package principal;
-
+import operacionesConFicheros.*;
 import interfaceMain.InterfaceEjecuta;
 import interfaceMain.InterfaceSalida;
 
@@ -9,21 +9,28 @@ import persona.Ciclista;
 import salidaDeDatos.SalidaDeDatos;
 import tiempo.Reloj;
 import bicicleta.Bicicleta;
+import java.util.*;
+import factoresExternos.*;
 /**
  * Clase Principal del programa
  * @author Juan Carlos Marco y Juan Luis Pérez
  *
  */
+
 public class  Principal 
 {
 
 	private ArrayList<Object> listaejecuta;
 	private ArrayList<Object> listasalida;
 
+	
+	
 	//SalidaDeDatos salida;
 
 	public static void main(String args[]) 
 	{
+		
+		
 
 		Principal p = new Principal();
 		p.inicia();
