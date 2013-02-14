@@ -62,8 +62,7 @@ public class Reloj extends Contador  implements InterfaceEjecuta,InterfaceSalida
 	public int devuelveSegundos() 
 	{
 		int segundos = 0;
-		segundos = segundo.getUnidad() + minuto.getUnidad() * 60
-				+ hora.getUnidad() * 3600;
+		segundos = segundo.getUnidad() + minuto.getUnidad() * 60 + hora.getUnidad() * 3600;
 		return segundos;
 	}
 	/**

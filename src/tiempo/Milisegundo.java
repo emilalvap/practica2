@@ -19,7 +19,7 @@ public class Milisegundo
 		//variable para obtener el tiempo al iniciar el metodo
 		milisegundosactuales = System.currentTimeMillis();
 		int segundo = 0;
-		while (segundo < 2) 
+		while (segundo <= 1) 
 		{
 			// Metodo para obtener el tiempo actual
 

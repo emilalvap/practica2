@@ -38,37 +38,37 @@ public class SalidaDeDatos
 
 		switch(formato)
 		{
-		case "cadencia": 
-		{
-			mensajefinal.append( mensaje + " pedaladas por segundo ");
-			break;
-		}
-		case "velocidad": 
-		{
-			mensajefinal.append("Velocidad actual:" + mensaje + " m/s ");
-			break;
-		}
-
-		case "hh:mm:ss": 
-		{
-			int i = 0;
-			while(i<mensaje.length())
+			case "cadencia": 
 			{
-				if(mensaje.charAt(i) == ' ')
+				mensajefinal.append( mensaje + " pedaladas por segundo ");
+				break;
+			}
+			case "velocidad": 
+			{
+				mensajefinal.append("Velocidad actual:" + mensaje + " m/s ");
+				break;
+			}
+	
+			case "hh:mm:ss": 
+			{
+				int i = 0;
+				while(i<mensaje.length())
 				{
-					mensajefinal.insert(i,":");
-
-				}
-				else
-				{
-					mensajefinal.insert(i,mensaje.charAt(i));
-				}
-
-				i++;
-			}	
-
-			break;
-		}
+					if(mensaje.charAt(i) == ' ')
+					{
+						mensajefinal.insert(i,":");
+	
+					}
+					else
+					{
+						mensajefinal.insert(i,mensaje.charAt(i));
+					}
+	
+					i++;
+				}	
+	
+				break;
+			}
 		}
 		System.out.println(mensajefinal.toString());
 	}
@@ -90,45 +90,45 @@ public class SalidaDeDatos
 			posicionempiezaformato++;
 
 		}
-		//como ya sabemos donde empieza el formato, ahora sohttp://dnssearch.ono.es/assist.php?url=www.milanuncioeslo comparamos para sacar la salida formateada
+		//como ya sabemos donde empieza el formato, ahora solo comparamos para sacar la salida formateada
 		//con dicho formato
 		switch(mensaje.substring(posicionempiezaformato + 1).toString())
 		{
-		case "cadencia": 
-		{
-			mensajefinal.append(mensaje.substring(0, posicionempiezaformato) + " pedaladas por segundo ");
-			break;
-		}
-		case "velocidad": 
-		{
-			mensajefinal.append("Velocidad actual:" + mensaje.substring(0, posicionempiezaformato) + " m/s ");
-			break;
-		}
-		case "distancia": 
-		{
-			mensajefinal.append("Distancia recorrida:" + mensaje.substring(0, posicionempiezaformato) + " m ");
-			break;
-		}
-		case "hh:mm:ss": 
-		{
-			int caractermensaje  = 0;
-			while(caractermensaje < posicionempiezaformato)
+			case "cadencia": 
 			{
-				if(mensaje.charAt(caractermensaje) == ' ')
+				mensajefinal.append(mensaje.substring(0, posicionempiezaformato) + " pedaladas por segundo ");
+				break;
+			}
+			case "velocidad": 
+			{
+				mensajefinal.append("Velocidad actual:" + mensaje.substring(0, posicionempiezaformato) + " m/s ");
+				break;
+			}
+			case "distancia": 
+			{
+				mensajefinal.append("Distancia recorrida:" + mensaje.substring(0, posicionempiezaformato) + " m ");
+				break;
+			}
+			case "hh:mm:ss": 
+			{
+				int caractermensaje  = 0;
+				while(caractermensaje < posicionempiezaformato)
 				{
-					mensajefinal.insert(caractermensaje,":");
-
-				}
-				else
-				{
-					mensajefinal.insert(caractermensaje,mensaje.charAt(caractermensaje));
-				}
-
-				caractermensaje++;
-			}	
-
-			break;
-		}
+					if(mensaje.charAt(caractermensaje) == ' ')
+					{
+						mensajefinal.insert(caractermensaje,":");
+	
+					}
+					else
+					{
+						mensajefinal.insert(caractermensaje,mensaje.charAt(caractermensaje));
+					}
+	
+					caractermensaje++;
+				}	
+	
+				break;
+			}
 		}
 		System.out.println(mensajefinal.toString());
 	}

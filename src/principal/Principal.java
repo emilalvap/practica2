@@ -14,13 +14,13 @@ import bicicleta.Bicicleta;
  * @author Juan Carlos Marco y Juan Luis Pérez
  *
  */
-public class Principal 
+public class  Principal 
 {
 
 	private ArrayList<Object> listaejecuta;
 	private ArrayList<Object> listasalida;
 
-	SalidaDeDatos salida;
+	//SalidaDeDatos salida;
 
 	public static void main(String args[]) 
 	{
@@ -60,7 +60,7 @@ public class Principal
 	{
 		int contador=0; // Contara los segundos de ejecucion del programa
 		int limite=60;  // Se establecera el limite en SEGUNDOS de la ejecucion del programa
-		salida = new SalidaDeDatos(listasalida);
+		//salida = new SalidaDeDatos(listasalida);
 
 		
 		while (contador < limite) 
