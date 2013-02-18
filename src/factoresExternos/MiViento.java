@@ -3,7 +3,7 @@ package factoresExternos;
 public enum MiViento {
 
 	A_FAVOR(1),
-	EN_CONTRA(1),
+	EN_CONTRA(-1),
 	LATERAL(0),
 	DESCONOCIDO(0);
 	
