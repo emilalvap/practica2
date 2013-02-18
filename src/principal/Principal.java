@@ -1,7 +1,9 @@
 package principal;
-import operacionesConFicheros.*;
+//import operacionesConFicheros.*;
 import interfaceMain.InterfaceEjecuta;
 import interfaceMain.InterfaceSalida;
+
+import java.io.*;
 
 import java.util.ArrayList;
 
@@ -10,10 +12,12 @@ import salidaDeDatos.SalidaDeDatos;
 import tiempo.Reloj;
 import bicicleta.Bicicleta;
 import java.util.*;
+
+import entradaDeDatos.Entrada;
 import factoresExternos.*;
 /**
  * Clase Principal del programa
- * @author Juan Carlos Marco y Juan Luis Pérez
+ * @author Juan Carlos Marco y Juan Luis PÃ©rez
  *
  */
 
@@ -39,7 +43,7 @@ public class  Principal
 
 	}
 
-	public void inicia() 
+	public void inicia()
 	{
 		listaejecuta = new ArrayList<Object>();
 		listasalida = new ArrayList<Object>();
@@ -52,15 +56,19 @@ public class  Principal
 		InterfaceEjecuta reloj = new Reloj();
 		InterfaceEjecuta ciclista = new Ciclista((Bicicleta) bici1);
 
-				
+		Entrada entrada_de_datos = new Entrada(new InputStreamReader(System.in) );
+		
 		listaejecuta.add(ciclista);
 		listaejecuta.add(reloj);
 		listaejecuta.add(bici1);
-
-		listasalida.add(reloj);
+		listaejecuta.add(entrada_de_datos);
+		
+		//MiViento.valueOf("TROLL").getFactor();
+		/*listasalida.add(reloj);
 		listasalida.add(bici1);
 		listasalida.add(ciclista);
-
+		*/
+				
 	}
 
 	public void ejecuta() 
@@ -85,7 +93,7 @@ public class  Principal
 
 			contador++; 
 			
-
+			
 		}
 	}
 
