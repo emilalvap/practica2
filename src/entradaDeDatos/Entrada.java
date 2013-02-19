@@ -22,7 +22,7 @@ public class Entrada implements InterfaceEjecuta {
 		lectura.read(buffer_de_lectura);
 
 		String Salida = new String(buffer_de_lectura);
-		System.out.println(Salida);
+		// System.out.println(Salida);
 
 	    }
 	} catch (IOException e) {

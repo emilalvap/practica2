@@ -1,4 +1,5 @@
 package principal;
+
 //import operacionesConFicheros.*;
 import interfaceMain.InterfaceEjecuta;
 import interfaceMain.InterfaceSalida;
@@ -15,91 +16,91 @@ import java.util.*;
 
 import entradaDeDatos.Entrada;
 import factoresExternos.*;
+
 /**
  * Clase Principal del programa
+ * 
  * @author Juan Carlos Marco y Juan Luis PÃ©rez
- *
+ * 
  */
 
-public class  Principal 
-{
+public class Principal {
 
-	private ArrayList<Object> listaejecuta;
-	private ArrayList<Object> listasalida;
+    private ArrayList<Object> listaejecuta;
+    private ArrayList<Object> listasalida;
 
-	
-	
-	//SalidaDeDatos salida;
+    // SalidaDeDatos salida;
 
-	public static void main(String args[]) 
-	{
-		
-		
+    public static void main(String args[]) {
 
-		Principal p = new Principal();
-		p.inicia();
-		p.ejecuta();
-		p.finaliza();
+	Principal p = new Principal();
+	p.inicia();
+	p.ejecuta();
+	p.finaliza();
 
-	}
+    }
 
-	public void inicia()
-	{
-		listaejecuta = new ArrayList<Object>();
-		listasalida = new ArrayList<Object>();
+    public void inicia() {
+	listaejecuta = new ArrayList<Object>();
+	listasalida = new ArrayList<Object>();
 
+	int dientesporpinon[] = { 17, 16, 15, 14, 13, 12 };
+	int dientesporplato[] = { 36, 40, 44 };
+	InterfaceEjecuta bici1 = new Bicicleta(dientesporpinon.length,
+		dientesporplato.length, 1, dientesporpinon, dientesporplato,
+		0.6858);
+	InterfaceEjecuta reloj = new Reloj();
+	InterfaceEjecuta ciclista = new Ciclista((Bicicleta) bici1);
 
-		int dientesporpinon[] = {17,16,15,14,13,12};
-		int dientesporplato[] = {36,40,44};
-		InterfaceEjecuta bici1 = new Bicicleta(dientesporpinon.length, dientesporplato.length, 
-				1,dientesporpinon,dientesporplato,0.6858);
-		InterfaceEjecuta reloj = new Reloj();
-		InterfaceEjecuta ciclista = new Ciclista((Bicicleta) bici1);
+	/*try {
+	    Entrada entrada_de_datos_por_fichero = new Entrada(
+		    new InputStreamReader(new FileInputStream(
+			    "test1.txt")));
+	} catch (FileNotFoundException e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+	} finally {
 
-		Entrada entrada_de_datos = new Entrada(new InputStreamReader(System.in) );
-		
-		listaejecuta.add(ciclista);
-		listaejecuta.add(reloj);
-		listaejecuta.add(bici1);
-		listaejecuta.add(entrada_de_datos);
-		
-		//MiViento.valueOf("TROLL").getFactor();
-		/*listasalida.add(reloj);
-		listasalida.add(bici1);
-		listasalida.add(ciclista);
-		*/
-				
-	}
+	}*/
+	Entrada entrada_de_datos_por_teclado = new Entrada(
+		new InputStreamReader(System.in));
 
-	public void ejecuta() 
-	{
-		int contador=0; // Contara los segundos de ejecucion del programa
-		int limite=60;  // Se establecera el limite en SEGUNDOS de la ejecucion del programa
-		//salida = new SalidaDeDatos(listasalida);
+	listaejecuta.add(ciclista);
+	listaejecuta.add(reloj);
+	listaejecuta.add(bici1);
 
-		
-		while (contador < limite) 
-		{
-			
-			for (Object c : listaejecuta) 
-			{
-				((InterfaceEjecuta) c).ejecuta();
-			}
+	listaejecuta.add(entrada_de_datos_por_teclado);
 
-			for (Object c : listasalida) 
-			{
-				((InterfaceSalida) c).muestra();
-			}
+	/*
+	 * listasalida.add(reloj); listasalida.add(bici1);
+	 * listasalida.add(ciclista);
+	 */
 
-			contador++; 
-			
-			
-		}
-	}
+    }
 
-	public void finaliza() 
-	{
+    public void ejecuta() {
+	int contador = 0; // Contara los segundos de ejecucion del programa
+	int limite = 60; // Se establecera el limite en SEGUNDOS de la ejecucion
+			 // del programa
+	// salida = new SalidaDeDatos(listasalida);
+
+	while (contador < limite) {
+
+	    for (Object c : listaejecuta) {
+		((InterfaceEjecuta) c).ejecuta();
+	    }
+
+	    for (Object c : listasalida) {
+		((InterfaceSalida) c).muestra();
+	    }
+
+	    contador++;
 
 	}
+    }
+
+    public void finaliza() {
+
+    }
 
 }
