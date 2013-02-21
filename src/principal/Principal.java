@@ -78,7 +78,7 @@ public class Principal {
 	 * listasalida.add(reloj); listasalida.add(bici1);
 	 * listasalida.add(ciclista);
 	 */
-	/*
+	
 	GeneraMatrizDeStringTokenizer gen = new GeneraMatrizDeStringTokenizer();
 	int i = 0;
 	
@@ -89,7 +89,7 @@ public class Principal {
 	    System.out.println(arr[i]);
 	    i++;
 	}
-	*/
+	
     }
 
     public void ejecuta() {

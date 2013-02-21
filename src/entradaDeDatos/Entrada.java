@@ -49,6 +49,11 @@ public class Entrada
 	}
 	return Salida;
     }
+    /**
+     * devuelve un StringTokenizer con los datos del fichero dado.
+     * @param fichero
+     * @return
+     */
     public StringTokenizer cargarFicheroEnStringTokenizer(String fichero) 
     {
 	
