@@ -4,8 +4,7 @@ import tiempo.Reloj;
 
 public class MostrarReloj extends InterfazOrden {
 
-    public MostrarReloj()
-    {
-	
+    public MostrarReloj() {
+	System.out.println("ESTOY DENTRO DEL METODO RELOJ");
     }
 }

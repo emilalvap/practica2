@@ -14,6 +14,8 @@ import tiempo.Reloj;
 import bicicleta.Bicicleta;
 import java.util.*;
 
+import comandos.Comandos;
+import comandos.InterfazOrden;
 import comandos.Parser;
 
 import entradaDeDatos.Entrada;
@@ -31,6 +33,7 @@ public class Principal {
     private ArrayList<Object> listaejecuta;
     private ArrayList<Object> listasalida;
     private Parser Parsercomandos;
+
     // SalidaDeDatos salida;
 
     public static void main(String args[]) {
@@ -54,25 +57,22 @@ public class Principal {
 	InterfaceEjecuta reloj = new Reloj();
 	InterfaceEjecuta ciclista = new Ciclista((Bicicleta) bici1);
 
-	/*try {
-	    Entrada entrada_de_datos_por_fichero = new Entrada(
-		    new InputStreamReader(new FileInputStream(
-			    "test1.txt")));
-	} catch (FileNotFoundException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	} finally {
-
-	}*/
-	
+	/*
+	 * try { Entrada entrada_de_datos_por_fichero = new Entrada( new
+	 * InputStreamReader(new FileInputStream( "test1.txt"))); } catch
+	 * (FileNotFoundException e) { // TODO Auto-generated catch block
+	 * e.printStackTrace(); } finally {
+	 * 
+	 * }
+	 */
 
 	listaejecuta.add(ciclista);
 	listaejecuta.add(reloj);
 	listaejecuta.add(bici1);
 
-	//listaejecuta.add(entrada_de_datos_por_teclado);
+	// listaejecuta.add(entrada_de_datos_por_teclado);
 
-	 Parsercomandos=new Parser();
+	Parsercomandos = new Parser();
 	/*
 	 * listasalida.add(reloj); listasalida.add(bici1);
 	 * listasalida.add(ciclista);
@@ -87,7 +87,7 @@ public class Principal {
 	// salida = new SalidaDeDatos(listasalida);
 	Entrada entrada_de_datos_por_teclado = new Entrada(
 		new InputStreamReader(System.in));
-	
+	InterfazOrden orden;
 
 	while (contador < limite) {
 
@@ -98,14 +98,9 @@ public class Principal {
 	    for (Object c : listasalida) {
 		((InterfaceSalida) c).muestra();
 	    }
-	    
-	   
-	System.out.println(Parsercomandos.DameComando(entrada_de_datos_por_teclado.leer()));
-	   
-	   
-	   
-	    
 
+	    orden = Parsercomandos.DameComando(entrada_de_datos_por_teclado
+		    .leer());
 	}
     }
 

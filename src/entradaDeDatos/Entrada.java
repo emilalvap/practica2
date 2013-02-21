@@ -14,9 +14,8 @@ public class Entrada {
 	lectura = nuevo_origen_de_lectura;
     }
 
- 
     public String leer() {
-	String Salida="NINGUNA";
+	String Salida = "NINGUNA";
 	// TODO Auto-generated method stub
 	try {
 
@@ -26,13 +25,13 @@ public class Entrada {
 
 		Salida = new String(buffer_de_lectura);
 		// System.out.println(Salida);
-		
+
 	    }
 	} catch (IOException e) {
 	    // TODO Auto-generated catch block
 	    e.printStackTrace();
 	} finally {
-	    
+
 	}
 	return Salida;
     }
