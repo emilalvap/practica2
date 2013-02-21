@@ -13,12 +13,13 @@ import salidaDeDatos.SalidaDeDatos;
 import tiempo.Reloj;
 import bicicleta.Bicicleta;
 import java.util.*;
-
+/*
 import comandos.Comandos;
-import comandos.InterfazOrden;
+import comandos.InterfazOrden;*/
 import comandos.Parser;
 
 import entradaDeDatos.Entrada;
+import entradaDeDatos.GeneraMatrizDeStringTokenizer;
 import factoresExternos.*;
 
 /**
@@ -77,7 +78,18 @@ public class Principal {
 	 * listasalida.add(reloj); listasalida.add(bici1);
 	 * listasalida.add(ciclista);
 	 */
-
+	/*
+	GeneraMatrizDeStringTokenizer gen = new GeneraMatrizDeStringTokenizer();
+	int i = 0;
+	
+	int [] arr = new int[gen.convertirAArrayFichero("carretera.txt").length];
+	arr = gen.convertirAArrayFichero("carretera.txt");
+	while(i < arr.length)
+	{
+	    System.out.println(arr[i]);
+	    i++;
+	}
+	*/
     }
 
     public void ejecuta() {
@@ -87,7 +99,7 @@ public class Principal {
 	// salida = new SalidaDeDatos(listasalida);
 	Entrada entrada_de_datos_por_teclado = new Entrada(
 		new InputStreamReader(System.in));
-	InterfazOrden orden;
+	//InterfazOrden orden;
 
 	while (contador < limite) {
 
@@ -98,9 +110,10 @@ public class Principal {
 	    for (Object c : listasalida) {
 		((InterfaceSalida) c).muestra();
 	    }
-
+	    /*
 	    orden = Parsercomandos.DameComando(entrada_de_datos_por_teclado
 		    .leer());
+		    */
 	}
     }
 

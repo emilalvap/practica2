@@ -3,23 +3,33 @@ package entradaDeDatos;
 import interfaceMain.InterfaceEjecuta;
 
 import java.io.*;
+import java.util.StringTokenizer;
 
 import comandos.Parser;
 
-public class Entrada {
+public class Entrada 
+{
 
     InputStreamReader lectura;
 
-    public Entrada(InputStreamReader nuevo_origen_de_lectura) {
+    public Entrada() 
+    {
+	
+    }
+    public Entrada(InputStreamReader nuevo_origen_de_lectura) 
+    {
 	lectura = nuevo_origen_de_lectura;
     }
 
-    public String leer() {
+    public String leer() 
+    {
 	String Salida = "NINGUNA";
 	// TODO Auto-generated method stub
-	try {
+	try 
+	{
 
-	    if (lectura.ready()) {
+	    if (lectura.ready()) 
+	    {
 		char[] buffer_de_lectura = new char[100];
 		lectura.read(buffer_de_lectura);
 
@@ -27,13 +37,50 @@ public class Entrada {
 		// System.out.println(Salida);
 
 	    }
-	} catch (IOException e) {
+	} 
+	catch (IOException e) 
+	{
 	    // TODO Auto-generated catch block
 	    e.printStackTrace();
-	} finally {
+	} 
+	finally 
+	{
 
 	}
 	return Salida;
+    }
+    public StringTokenizer cargarFicheroEnStringTokenizer(String fichero) 
+    {
+	
+	String contenidoficherocontokens = new String();
+
+	if (fichero != null) 
+	{
+		BufferedReader bufferdelectura;
+		try 
+		{
+			bufferdelectura = new BufferedReader(new FileReader(fichero));
+			while (bufferdelectura.ready())
+			{
+			    
+				contenidoficherocontokens += bufferdelectura.readLine() ;
+			}
+		} 
+		catch (FileNotFoundException e) 
+		{
+			System.err.println(e + "\nArchivo no encontrado."
+					+ "Escriba el nuevo nombre de archivo y por área.");
+
+		} 
+		catch (IOException e) 
+		{
+			System.err.println(e
+					+ "\nError de hardware durante la lectura."
+					+ "Introduzca el nuevo nombre de archivo y por área.");
+		}
+	}
+
+	return new StringTokenizer(contenidoficherocontokens, ":;");
     }
 
 }
