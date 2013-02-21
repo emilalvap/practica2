@@ -14,6 +14,8 @@ import tiempo.Reloj;
 import bicicleta.Bicicleta;
 import java.util.*;
 
+import comandos.Parser;
+
 import entradaDeDatos.Entrada;
 import factoresExternos.*;
 
@@ -28,7 +30,7 @@ public class Principal {
 
     private ArrayList<Object> listaejecuta;
     private ArrayList<Object> listasalida;
-
+    private Parser Parsercomandos;
     // SalidaDeDatos salida;
 
     public static void main(String args[]) {
@@ -62,15 +64,15 @@ public class Principal {
 	} finally {
 
 	}*/
-	Entrada entrada_de_datos_por_teclado = new Entrada(
-		new InputStreamReader(System.in));
+	
 
 	listaejecuta.add(ciclista);
 	listaejecuta.add(reloj);
 	listaejecuta.add(bici1);
 
-	listaejecuta.add(entrada_de_datos_por_teclado);
+	//listaejecuta.add(entrada_de_datos_por_teclado);
 
+	 Parsercomandos=new Parser();
 	/*
 	 * listasalida.add(reloj); listasalida.add(bici1);
 	 * listasalida.add(ciclista);
@@ -83,6 +85,9 @@ public class Principal {
 	int limite = 60; // Se establecera el limite en SEGUNDOS de la ejecucion
 			 // del programa
 	// salida = new SalidaDeDatos(listasalida);
+	Entrada entrada_de_datos_por_teclado = new Entrada(
+		new InputStreamReader(System.in));
+	
 
 	while (contador < limite) {
 
@@ -93,8 +98,13 @@ public class Principal {
 	    for (Object c : listasalida) {
 		((InterfaceSalida) c).muestra();
 	    }
-
-	    contador++;
+	    
+	   
+	System.out.println(Parsercomandos.DameComando(entrada_de_datos_por_teclado.leer()));
+	   
+	   
+	   
+	    
 
 	}
     }

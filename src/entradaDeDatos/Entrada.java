@@ -4,7 +4,9 @@ import interfaceMain.InterfaceEjecuta;
 
 import java.io.*;
 
-public class Entrada implements InterfaceEjecuta {
+import comandos.Parser;
+
+public class Entrada {
 
     InputStreamReader lectura;
 
@@ -12,8 +14,9 @@ public class Entrada implements InterfaceEjecuta {
 	lectura = nuevo_origen_de_lectura;
     }
 
-    @Override
-    public void ejecuta() {
+ 
+    public String leer() {
+	String Salida="NINGUNA";
 	// TODO Auto-generated method stub
 	try {
 
@@ -21,16 +24,17 @@ public class Entrada implements InterfaceEjecuta {
 		char[] buffer_de_lectura = new char[100];
 		lectura.read(buffer_de_lectura);
 
-		String Salida = new String(buffer_de_lectura);
+		Salida = new String(buffer_de_lectura);
 		// System.out.println(Salida);
-
+		
 	    }
 	} catch (IOException e) {
 	    // TODO Auto-generated catch block
 	    e.printStackTrace();
 	} finally {
-
+	    
 	}
+	return Salida;
     }
 
 }
