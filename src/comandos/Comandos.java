@@ -2,27 +2,39 @@ package comandos;
 
 import factoresExternos.MiViento;
 
-public enum Comandos {
-
-    // FRENAR(new InterfazOrden())
-    RELOJ(new MostrarReloj()), NINGUNA(new ComandoNinguno()), DESCONOCIDO(
-	    new ComandoDesconocido());
-
-    public InterfazOrden getOrden() {
-	return orden;
+public enum Comandos 
+{
+    RELOJ(new MostrarReloj()), 
+    NINGUNA(new ComandoNinguno()), 
+    DESCONOCIDO(new ComandoDesconocido()),
+    ACELERA(new ComandoAumentaCadencia()),
+    DESACELERA(new ComandoDisminuyeCadencia()),
+    SUBEMARCHA(new ComandoSubeMarcha()),
+    BAJAMARCHA(new ComandoBajaMarcha()),
+    SUBEPLATO(new ComandoSubePlato()),
+    BAJAPLATO(new ComandoBajaPlato());
+    
+    Comandos(InterfazInstruccion nueva_instruccion) 
+    {
+	instruccion = nueva_instruccion;
+    }
+    
+    InterfazInstruccion instruccion;
+    
+    public InterfazInstruccion getInstruccion() 
+    {
+	return instruccion;
     }
 
-    InterfazOrden orden;
 
-    Comandos(InterfazOrden nueva_orden) {
-	orden = nueva_orden;
-    }
-
-    public static Comandos existe(String comando) {
+    public static Comandos existe(String comando) 
+    {
 	Comandos comando_valido = DESCONOCIDO;
 
-	for (Comandos c : Comandos.values()) {
-	    if (comando.equalsIgnoreCase(c.name())) {
+	for (Comandos c : Comandos.values()) 
+	{
+	    if (comando.equalsIgnoreCase(c.name())) 
+	    {
 		comando_valido = c;
 	    }
 	}

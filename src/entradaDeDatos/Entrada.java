@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 import comandos.Parser;
 
-public class Entrada 
+public class Entrada implements InterfaceEjecuta
 {
 
     InputStreamReader lectura;
@@ -34,7 +34,7 @@ public class Entrada
 		lectura.read(buffer_de_lectura);
 
 		Salida = new String(buffer_de_lectura);
-		// System.out.println(Salida);
+		//System.out.println(Salida);
 
 	    }
 	} 
@@ -86,6 +86,13 @@ public class Entrada
 	}
 
 	return new StringTokenizer(contenidoficherocontokens, ":;");
+    }
+    @Override
+    public void ejecuta() 
+    {
+	leer();
+	// TODO Auto-generated method stub
+	
     }
 
 }

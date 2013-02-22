@@ -6,7 +6,8 @@ public enum MiViento {
 
     int factor;
 
-    MiViento(int nuevo_factor) {
+    MiViento(int nuevo_factor) 
+    {
 	factor = nuevo_factor;
     }
 
@@ -18,11 +19,14 @@ public enum MiViento {
      *            String a comprobar si es miembro del conjunto
      * @return MiViento Un miembro de la conjunto válido
      */
-    public static MiViento existe(String viento) {
+    public static MiViento existe(String viento) 
+    {
 	MiViento viento_valido = DESCONOCIDO;
 
-	for (MiViento v : MiViento.values()) {
-	    if (viento.equalsIgnoreCase(v.name())) {
+	for (MiViento v : MiViento.values()) 
+	{
+	    if (viento.equalsIgnoreCase(v.name())) 
+	    {
 		viento_valido = v;
 	    }
 	}
@@ -30,7 +34,8 @@ public enum MiViento {
 	return viento_valido;
     }
 
-    public int getFactor() {
+    public int getFactor() 
+    {
 	return existe(this.name()).factor;
 
     }

@@ -13,6 +13,7 @@ import salidaDeDatos.SalidaDeDatos;
 import tiempo.Reloj;
 import bicicleta.Bicicleta;
 import java.util.*;
+import comandos.InterfazInstruccion;
 /*
 import comandos.Comandos;
 import comandos.InterfazOrden;*/
@@ -34,10 +35,12 @@ public class Principal {
     private ArrayList<Object> listaejecuta;
     private ArrayList<Object> listasalida;
     private Parser Parsercomandos;
+    
 
     // SalidaDeDatos salida;
 
-    public static void main(String args[]) {
+    public static void main(String args[]) 
+    {
 
 	Principal p = new Principal();
 	p.inicia();
@@ -46,7 +49,8 @@ public class Principal {
 
     }
 
-    public void inicia() {
+    public void inicia() 
+    {
 	listaejecuta = new ArrayList<Object>();
 	listasalida = new ArrayList<Object>();
 
@@ -56,68 +60,52 @@ public class Principal {
 		dientesporplato.length, 1, dientesporpinon, dientesporplato,
 		0.6858);
 	InterfaceEjecuta reloj = new Reloj();
-	InterfaceEjecuta ciclista = new Ciclista((Bicicleta) bici1);
+	InterfaceEjecuta ciclista1 = new Ciclista((Bicicleta) bici1);
+	InterfaceEjecuta parser = new Parser();
 
-	/*
-	 * try { Entrada entrada_de_datos_por_fichero = new Entrada( new
-	 * InputStreamReader(new FileInputStream( "test1.txt"))); } catch
-	 * (FileNotFoundException e) { // TODO Auto-generated catch block
-	 * e.printStackTrace(); } finally {
-	 * 
-	 * }
-	 */
-
-	listaejecuta.add(ciclista);
+	listaejecuta.add(ciclista1);
 	listaejecuta.add(reloj);
 	listaejecuta.add(bici1);
-
-	// listaejecuta.add(entrada_de_datos_por_teclado);
+	listaejecuta.add(parser);
 
 	Parsercomandos = new Parser();
-	/*
-	 * listasalida.add(reloj); listasalida.add(bici1);
-	 * listasalida.add(ciclista);
-	 */
 	
-	GeneraMatrizDeStringTokenizer gen = new GeneraMatrizDeStringTokenizer();
-	int i = 0;
-	
-	int [] arr = new int[gen.convertirAArrayFichero("carretera.txt").length];
-	arr = gen.convertirAArrayFichero("carretera.txt");
-	while(i < arr.length)
-	{
-	    System.out.println(arr[i]);
-	    i++;
-	}
-	
+	listasalida.add(reloj); 
+	listasalida.add(bici1);
+	listasalida.add(ciclista1);
+	 
+
     }
 
-    public void ejecuta() {
+    public void ejecuta() 
+    {
 	int contador = 0; // Contara los segundos de ejecucion del programa
 	int limite = 60; // Se establecera el limite en SEGUNDOS de la ejecucion
 			 // del programa
-	// salida = new SalidaDeDatos(listasalida);
-	Entrada entrada_de_datos_por_teclado = new Entrada(
-		new InputStreamReader(System.in));
-	//InterfazOrden orden;
-
-	while (contador < limite) {
-
-	    for (Object c : listaejecuta) {
+	
+	
+	while (contador < limite) 
+	{
+	
+	    for (Object c : listaejecuta) 
+	    {
 		((InterfaceEjecuta) c).ejecuta();
 	    }
 
-	    for (Object c : listasalida) {
+	    for (Object c : listasalida) 
+	    {
 		((InterfaceSalida) c).muestra();
 	    }
 	    /*
 	    orden = Parsercomandos.DameComando(entrada_de_datos_por_teclado
 		    .leer());
 		    */
+	    contador++;
 	}
     }
 
-    public void finaliza() {
+    public void finaliza() 
+    {
 
     }
 
