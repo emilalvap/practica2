@@ -5,7 +5,8 @@ import interfaceMain.InterfaceEjecuta;
 public class ComandoBajaPlato extends InterfazInstruccion implements InterfaceEjecuta
 {
 
-    public ComandoBajaPlato() {
+    public ComandoBajaPlato() 
+    {
 	// TODO Auto-generated constructor stub
     }
 

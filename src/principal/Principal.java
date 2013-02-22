@@ -61,14 +61,14 @@ public class Principal {
 		0.6858);
 	InterfaceEjecuta reloj = new Reloj();
 	InterfaceEjecuta ciclista1 = new Ciclista((Bicicleta) bici1);
-	InterfaceEjecuta parser = new Parser();
+	InterfaceEjecuta parser = new Parser(ciclista1);
 
 	listaejecuta.add(ciclista1);
 	listaejecuta.add(reloj);
 	listaejecuta.add(bici1);
 	listaejecuta.add(parser);
 
-	Parsercomandos = new Parser();
+	//Parsercomandos = new Parser();
 	
 	listasalida.add(reloj); 
 	listasalida.add(bici1);

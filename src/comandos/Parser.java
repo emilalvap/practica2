@@ -24,8 +24,11 @@ public class Parser implements InterfaceEjecuta
      */
     Entrada entrada;
     InterfazInstruccion instruccion;
-    public Parser() 
+    Object objeto;
+    public Parser(Object obj) 
     {
+	
+	objeto = obj;
 	entrada = new Entrada(new InputStreamReader(System.in));
     }
 

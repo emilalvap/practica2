@@ -38,7 +38,7 @@ public enum Comandos implements InterfaceEjecuta
 	    if (comando.equalsIgnoreCase(c.name())) 
 	    {
 		//prueba para comprobar que lo leido por teclado corresponde a un comando
-		System.out.println(c.name());
+		//System.out.println(c.name());
 		comando_valido = c;
 	    }
 	}
