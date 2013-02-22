@@ -1,6 +1,8 @@
 package comandos;
 
-public abstract class InterfazInstruccion 
+import interfaceMain.InterfaceEjecuta;
+
+public abstract class InterfazInstruccion implements InterfaceEjecuta
 {
 
     private Comandos comando;
@@ -13,6 +15,10 @@ public abstract class InterfazInstruccion
     public void setComando(Comandos comando) 
     {
 	this.comando = comando;
+    }
+    public void ejecuta()
+    {
+	comando.ejecuta();
     }
 
 }

@@ -23,22 +23,23 @@ public class Parser implements InterfaceEjecuta
      * Parser(Ciclista c1) { c=c1; }
      */
     Entrada entrada;
+    InterfazInstruccion instruccion;
     public Parser() 
     {
 	entrada = new Entrada(new InputStreamReader(System.in));
     }
 
-    public InterfazInstruccion DameComando(String Comando) 
+    public InterfazInstruccion DameComando(String comando) 
     {
 
-	return Comandos.existe(Comando.split("\n")[0].split("\r")[0]).getInstruccion();
-
+	return Comandos.existe(comando.split("\n")[0].split("\r")[0]).getInstruccion();
     }
 
     @Override
-    public void ejecuta() {
-	// TODO Auto-generated method stub
-	//entrada.leer();
-	DameComando(entrada.leer());
+    public void ejecuta() 
+    {
+	
+	instruccion = DameComando(entrada.leer());
+	instruccion.ejecuta();
     }
 }

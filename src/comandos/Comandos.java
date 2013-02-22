@@ -1,14 +1,15 @@
 package comandos;
 
+import interfaceMain.InterfaceEjecuta;
 import factoresExternos.MiViento;
 
-public enum Comandos 
+public enum Comandos implements InterfaceEjecuta
 {
     RELOJ(new MostrarReloj()), 
     NINGUNA(new ComandoNinguno()), 
     DESCONOCIDO(new ComandoDesconocido()),
-    ACELERA(new ComandoAumentaCadencia()),
-    DESACELERA(new ComandoDisminuyeCadencia()),
+    AUMENTACADENCIA(new ComandoAumentaCadencia()),
+    DISMINUYECADENCIA(new ComandoDisminuyeCadencia()),
     SUBEMARCHA(new ComandoSubeMarcha()),
     BAJAMARCHA(new ComandoBajaMarcha()),
     SUBEPLATO(new ComandoSubePlato()),
@@ -33,13 +34,23 @@ public enum Comandos
 
 	for (Comandos c : Comandos.values()) 
 	{
+	    
 	    if (comando.equalsIgnoreCase(c.name())) 
 	    {
+		//prueba para comprobar que lo leido por teclado corresponde a un comando
+		System.out.println(c.name());
 		comando_valido = c;
 	    }
 	}
 
 	return comando_valido;
+    }
+
+
+    @Override
+    public void ejecuta() {
+	// TODO Auto-generated method stub
+	
     }
 
 }
