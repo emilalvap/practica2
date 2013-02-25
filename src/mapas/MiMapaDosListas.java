@@ -10,63 +10,66 @@ import entradaDeDatos.EntradaFichero;
 public class MiMapaDosListas <T,E> 
 {
     
-    Map<List<T>,List<E>> mapa;
+    Map<T,E> mapa;
     EntradaFichero fichero;
-    List<T> lista1 ;
-    List<E> lista2 ;
-    public MiMapaDosListas(StringTokenizer tokens)
+    List <T> lista;
+    /**
+     * constructor de MiMapa, el cual genera un mapa dado un StringTokenizer
+     * @param tokens
+     */
+    public  MiMapaDosListas(StringTokenizer tokens)
     {
-	fichero = new EntradaFichero();
-	List<T> lista1 = new ArrayList();
-	List<E> lista2 = new ArrayList();
 	//F[] matriz = fichero.convertirAArrayFichero("carretera.txt");
 	
-	
-	Map<List<T>,List<E>> mapa  = new HashMap<List<T>,List<E>>();
+	lista = new ArrayList<T>();
+	Map<T,E> mapa  = new HashMap<T,E>();
 	int i = 0;
+	T clave = null;
+	int j = 0;
 	while(tokens.hasMoreTokens())
 	{
 	    if(i % 2 == 0)
 	    {
-		//System.out.println(tokens.nextToken());
-		lista1.add((T) tokens.nextToken());
+		clave = (T) tokens.nextToken();
 		
 	    }
 	    if(i%2 == 1)
 	    {
-		//System.out.println(tokens.nextToken());
-		lista2.add((E) tokens.nextToken());
-		//lista1.add();
+	
+		mapa.put(clave, (E) tokens.nextToken());
+		lista.add(j,(T)clave);
+		
+		j++;
 	    }
 	   
-	   // System.out.println(lista1.get(i));
+	    
 	    i++;
 	}
-	mapa.put(lista1, lista2);
+	
 	
     }
-    public Map getMapa()
+    /**
+     * se devuelve el mapa 
+     * @return
+     */
+    public Map<T, E> getMapa()
     {
-	return mapa;
+	return  mapa;
 	
     }
-    public List<T> getLista1()
+  /**dada una clave, se devuelve la informacion oportuna
+   * 
+   * @param ele
+   * @return
+   */
+    public E getElemento(int ele)
     {
-	return lista1;
+	return (E) lista.get(ele);
+	//return mapa.get(lista.get(ele));
+	
+	
 	
     }
-    public List<E> getLista2()
-    {
-	return lista2;
-	
-    }
-    public T getElementoLista1(int ele)
-    {
-	return lista1.get(ele);
-    }
-    public E getElementoLista2(int ele)
-    {
-	return lista2.get(ele);
-    }
+   
     
 }

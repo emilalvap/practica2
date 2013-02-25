@@ -20,11 +20,11 @@ public class EntradaFichero
      * @param fichero
      * @return
      */
-    public double[] convertirAArrayFichero(String fichero)
+    public double[] convertirAArrayFichero(String fichero,String delimitadores)
     {
 	
 	
-	return devuelveMatrizDeStringTokenizer(cargarFicheroEnStringTokenizer(fichero));
+	return devuelveMatrizDeStringTokenizer(cargarFicheroEnStringTokenizer(fichero,delimitadores));
 	
     }
     /**devuelve un array de enteros dado un texto con tokens
@@ -44,7 +44,7 @@ public class EntradaFichero
 	}
 	return array;
     }
-    public StringTokenizer cargarFicheroEnStringTokenizer(String fichero) 
+    public StringTokenizer cargarFicheroEnStringTokenizer(String fichero,String delimitadores) 
     {
 	
 	String contenidoficherocontokens = new String();
@@ -75,6 +75,6 @@ public class EntradaFichero
 		}
 	}
 
-	return new StringTokenizer(contenidoficherocontokens, ":;");
+	return new StringTokenizer(contenidoficherocontokens, delimitadores);
     }
 }

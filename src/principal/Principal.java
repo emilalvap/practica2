@@ -7,6 +7,9 @@ import interfaceMain.InterfaceSalida;
 import java.io.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import persona.Ciclista;
 import salidaDeDatos.SalidaDeDatos;
@@ -85,20 +88,20 @@ public class Principal {
 	int limite = 60; // Se establecera el limite en SEGUNDOS de la ejecucion
 			 // del programa
 	EntradaFichero entrada = new EntradaFichero();
-	MiMapaDosListas<Double,Double> mapa = new MiMapaDosListas<Double,Double>(entrada.cargarFicheroEnStringTokenizer("carretera.txt"));
+	MiMapaDosListas<Double,Double> mapa = new MiMapaDosListas<Double,Double>
+	(entrada.cargarFicheroEnStringTokenizer("carretera.txt",":;"));
+	
+
+	
 	
 	while (contador < limite) 
 	{
-	
-	    
+	   
 	    for (Object c : listaejecuta) 
 	    {
 		((InterfaceEjecuta) c).ejecuta();
 	    }
-	    //mapa.getElementoLista1();
-	    //mapa.getElementoLista2(contador);
-	    //System.out.println()
-
+	  
 	    for (Object c : listasalida) 
 	    {
 		((InterfaceSalida) c).muestra();
