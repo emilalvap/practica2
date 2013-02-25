@@ -22,10 +22,19 @@ public class EntradaFichero {
      * @param fichero
      * @return
      */
+<<<<<<< HEAD
     public double[] convertirAArrayFichero(String fichero) {
 
 	return devuelveMatrizDeStringTokenizer(cargarFicheroEnStringTokenizer(fichero));
 
+=======
+    public double[] convertirAArrayFichero(String fichero,String delimitadores)
+    {
+	
+	
+	return devuelveMatrizDeStringTokenizer(cargarFicheroEnStringTokenizer(fichero,delimitadores));
+	
+>>>>>>> branch 'master' of https://github.com/juancly/practica2.git
     }
 
     /**
@@ -45,9 +54,15 @@ public class EntradaFichero {
 	}
 	return array;
     }
+<<<<<<< HEAD
 
     public StringTokenizer cargarFicheroEnStringTokenizer(String fichero) {
 
+=======
+    public StringTokenizer cargarFicheroEnStringTokenizer(String fichero,String delimitadores) 
+    {
+	
+>>>>>>> branch 'master' of https://github.com/juancly/practica2.git
 	String contenidoficherocontokens = new String();
 
 	if (fichero != null) {
@@ -69,6 +84,6 @@ public class EntradaFichero {
 	    }
 	}
 
-	return new StringTokenizer(contenidoficherocontokens, ":;");
+	return new StringTokenizer(contenidoficherocontokens, delimitadores);
     }
 }

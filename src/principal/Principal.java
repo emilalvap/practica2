@@ -7,6 +7,9 @@ import interfaceMain.InterfaceSalida;
 import java.io.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import persona.Ciclista;
 import salidaDeDatos.SalidaDeDatos;
@@ -14,7 +17,7 @@ import tiempo.Reloj;
 import bicicleta.Bicicleta;
 import java.util.*;
 
-import mapas.MiMapaDosListas;
+import mapas.MiMapa;
 import comandos.InterfazInstruccion;
 /*
  import comandos.Comandos;
@@ -87,26 +90,50 @@ public class Principal {
 	int limite = 60; // Se establecera el limite en SEGUNDOS de la ejecucion
 			 // del programa
 	EntradaFichero entrada = new EntradaFichero();
+<<<<<<< HEAD
 	MiMapaDosListas<Double, Double> mapa = new MiMapaDosListas<Double, Double>(
 		entrada.cargarFicheroEnStringTokenizer("carretera.txt"));
 
 	while (contador < limite) {
 
 	    for (Object c : listaejecuta) {
+=======
+	MiMapa<Double,Double> mapa = new MiMapa<Double,Double>
+	(entrada.cargarFicheroEnStringTokenizer("carretera.txt",":;"));
+	
+
+	
+	
+	while (contador < limite) 
+	{
+	   
+	    for (Object c : listaejecuta) 
+	    {
+>>>>>>> branch 'master' of https://github.com/juancly/practica2.git
 		((InterfaceEjecuta) c).ejecuta();
 	    }
+<<<<<<< HEAD
 	    // mapa.getElementoLista1();
 	    // mapa.getElementoLista2(contador);
 	    // System.out.println()
 
 	    for (Object c : listasalida) {
+=======
+	  
+	    for (Object c : listasalida) 
+	    {
+>>>>>>> branch 'master' of https://github.com/juancly/practica2.git
 		((InterfaceSalida) c).muestra();
 	    }
+<<<<<<< HEAD
 
 	    /*
 	     * orden = Parsercomandos.DameComando(entrada_de_datos_por_teclado
 	     * .leer());
 	     */
+=======
+	
+>>>>>>> branch 'master' of https://github.com/juancly/practica2.git
 	    contador++;
 	}
     }
