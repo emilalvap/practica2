@@ -10,9 +10,9 @@ import entradaDeDatos.*;
  */
 public class Carretera {
 
-    GeneraMatrizDeStringTokenizer fichero;
+    EntradaFichero fichero;
     String ruta;
-    int matriz[];
+    double[] matriz;
 
     /**
      * recibe la direccion de la ruta en la que se encuentra el fichero de
@@ -24,7 +24,7 @@ public class Carretera {
     public Carretera(String miruta) 
     {
 	ruta = miruta;
-	fichero = new GeneraMatrizDeStringTokenizer();
+	fichero = new EntradaFichero();
 	matriz = fichero.convertirAArrayFichero(ruta);
     }
 
@@ -33,7 +33,7 @@ public class Carretera {
      * matriz[0] = metro en el que cambia la pendiente matriz[1] =pendiente que
      * ira desde 90 hasta -90
      */
-    public int[] getMatriz() 
+    public double[] getMatriz() 
     {
 
 	return matriz;

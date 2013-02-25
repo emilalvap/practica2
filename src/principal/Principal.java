@@ -13,14 +13,16 @@ import salidaDeDatos.SalidaDeDatos;
 import tiempo.Reloj;
 import bicicleta.Bicicleta;
 import java.util.*;
+
+import mapas.MiMapaDosListas;
 import comandos.InterfazInstruccion;
 /*
 import comandos.Comandos;
 import comandos.InterfazOrden;*/
 import comandos.Parser;
 
-import entradaDeDatos.Entrada;
-import entradaDeDatos.GeneraMatrizDeStringTokenizer;
+import entradaDeDatos.EntradaTeclado;
+import entradaDeDatos.EntradaFichero;
 import factoresExternos.*;
 
 /**
@@ -82,20 +84,26 @@ public class Principal {
 	int contador = 0; // Contara los segundos de ejecucion del programa
 	int limite = 60; // Se establecera el limite en SEGUNDOS de la ejecucion
 			 // del programa
-	
+	EntradaFichero entrada = new EntradaFichero();
+	MiMapaDosListas<Double,Double> mapa = new MiMapaDosListas<Double,Double>(entrada.cargarFicheroEnStringTokenizer("carretera.txt"));
 	
 	while (contador < limite) 
 	{
 	
+	    
 	    for (Object c : listaejecuta) 
 	    {
 		((InterfaceEjecuta) c).ejecuta();
 	    }
+	    //mapa.getElementoLista1();
+	    //mapa.getElementoLista2(contador);
+	    //System.out.println()
 
 	    for (Object c : listasalida) 
 	    {
 		((InterfaceSalida) c).muestra();
 	    }
+	  
 	    /*
 	    orden = Parsercomandos.DameComando(entrada_de_datos_por_teclado
 		    .leer());
