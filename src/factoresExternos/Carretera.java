@@ -21,8 +21,7 @@ public class Carretera {
      * @param miruta
      */
 
-    public Carretera(String miruta) 
-    {
+    public Carretera(String miruta) {
 	ruta = miruta;
 	fichero = new EntradaFichero();
 	matriz = fichero.convertirAArrayFichero(ruta);
@@ -33,10 +32,8 @@ public class Carretera {
      * matriz[0] = metro en el que cambia la pendiente matriz[1] =pendiente que
      * ira desde 90 hasta -90
      */
-    public double[] getMatriz() 
-    {
+    public double[] getMatriz() {
 
 	return matriz;
     }
 }
-

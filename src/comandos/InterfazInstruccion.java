@@ -2,23 +2,16 @@ package comandos;
 
 import interfaceMain.InterfaceEjecuta;
 
-public abstract class InterfazInstruccion implements InterfaceEjecuta
-{
+public interface InterfazInstruccion extends InterfaceEjecuta {
 
-    private Comandos comando;
+    public void parse();
 
-    public Comandos getComando() 
-    {
-	return comando;
-    }
+    public void execute();
 
-    public void setComando(Comandos comando) 
-    {
-	this.comando = comando;
-    }
-    public void ejecuta()
-    {
-	comando.ejecuta();
-    }
+    public void configurarContexto();
+
+    public void obtenerAyuda();
+
+    public void ejecuta();
 
 }

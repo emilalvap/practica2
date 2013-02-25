@@ -7,60 +7,52 @@ import java.util.StringTokenizer;
 
 import comandos.Parser;
 
-public class EntradaTeclado implements InterfaceEjecuta
-{
+public class EntradaTeclado implements InterfaceEjecuta {
 
-    InputStreamReader lectura;
+    BufferedReader lectura;
 
-    public EntradaTeclado() 
-    {
-	
+    public EntradaTeclado() {
+
     }
-    public EntradaTeclado(InputStreamReader nuevo_origen_de_lectura) 
-    {
+
+    public EntradaTeclado(BufferedReader nuevo_origen_de_lectura) {
 	lectura = nuevo_origen_de_lectura;
     }
 
-    public String leer() 
-    {
+    public String leer() {
 	String Salida = "NINGUNA";
 	// TODO Auto-generated method stub
-	try 
-	{
+	try {
 
-	    if (lectura.ready()) 
-	    {
+	    if (lectura.ready()) {
 		char[] buffer_de_lectura = new char[100];
 		lectura.read(buffer_de_lectura);
 
 		Salida = new String(buffer_de_lectura);
-		//System.out.println(Salida);
+		// System.out.println(Salida);
 
 	    }
-	} 
-	catch (IOException e) 
-	{
+	} catch (IOException e) {
 	    // TODO Auto-generated catch block
 	    e.printStackTrace();
-	} 
-	finally 
-	{
+	} finally {
 
 	}
 	return Salida;
     }
+
     /**
      * devuelve un StringTokenizer con los datos del fichero dado.
+     * 
      * @param fichero
      * @return
      */
-    
+
     @Override
-    public void ejecuta() 
-    {
+    public void ejecuta() {
 	leer();
 	// TODO Auto-generated method stub
-	
+
     }
 
 }
