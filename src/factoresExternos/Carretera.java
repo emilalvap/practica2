@@ -24,7 +24,7 @@ public class Carretera {
     public Carretera(String miruta) {
 	ruta = miruta;
 	fichero = new EntradaFichero();
-	matriz = fichero.convertirAArrayFichero(ruta,":;");
+	matriz = fichero.convertirAArrayFichero(ruta, ":;");
     }
 
     /**

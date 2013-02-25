@@ -15,12 +15,9 @@ import entradaDeDatos.EntradaTeclado;
  * @author usuario_local
  * 
  */
-<<<<<<< HEAD
+
 public class Parser implements InterfaceEjecuta {
-=======
-public class Parser extends EntradaTeclado implements InterfaceEjecuta 
-{
->>>>>>> branch 'master' of https://github.com/juancly/practica2.git
+
 
     EntradaTeclado lectura;
     InterfazInstruccion instruccion;

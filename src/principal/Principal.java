@@ -17,7 +17,6 @@ import tiempo.Reloj;
 import bicicleta.Bicicleta;
 import java.util.*;
 
-
 import mapas.MiMapaDosListas;
 import comandos.InterfazInstruccion;
 /*
@@ -97,47 +96,32 @@ public class Principal {
 
 	while (contador < limite) {
 
-	   
+	    while (contador < limite) {
 
-	MiMapaDosListas<Double,Double> mapa = new MiMapaDosListas<Double,Double>
-	(entrada.cargarFicheroEnStringTokenizer("carretera.txt",":;"));
-	
+		for (Object c : listaejecuta) {
 
-		
-	while (contador < limite) 
-	{
-	   
-	    for (Object c : listaejecuta) 
-	    {
+		    ((InterfaceEjecuta) c).ejecuta();
+		}
 
-		((InterfaceEjecuta) c).ejecuta();
+		// mapa.getElementoLista1();
+		// mapa.getElementoLista2(contador);
+		// System.out.println()
+
+		for (Object c : listasalida) {
+
+		    ((InterfaceSalida) c).muestra();
+		}
+
+		/*
+		 * orden =
+		 * Parsercomandos.DameComando(entrada_de_datos_por_teclado
+		 * .leer());
+		 */
+
+		contador++;
 	    }
-
-	    // mapa.getElementoLista1();
-	    // mapa.getElementoLista2(contador);
-	    // System.out.println()
-
-	 
-
-	  
-	    for (Object c : listasalida) 
-	    {
-
-		((InterfaceSalida) c).muestra();
-	    }
-
-
-	    /*
-	     * orden = Parsercomandos.DameComando(entrada_de_datos_por_teclado
-	     * .leer());
-	     */
-
-	
-
-	    contador++;
 	}
     }
-	}
 
     public void finaliza() {
 
