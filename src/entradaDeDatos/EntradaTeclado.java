@@ -3,7 +3,7 @@ package entradaDeDatos;
 import interfaceMain.InterfaceEjecuta;
 
 import java.io.*;
-import java.util.StringTokenizer;
+
 
 import comandos.Parser;
 
@@ -18,10 +18,13 @@ public class EntradaTeclado implements InterfaceEjecuta {
     public EntradaTeclado(BufferedReader nuevo_origen_de_lectura) {
 	lectura = nuevo_origen_de_lectura;
     }
-
+/**
+ * Mediante un BufferReader cualquiera , lee (si están disponibles // no realiza espera activa )  una cadena y la devuelve.
+ * @return Salida La cadena leída o NINGUNA si no ha leido nada.
+ */
     public String leer() {
 	String Salida = "NINGUNA";
-	// TODO Auto-generated method stub
+	
 	try {
 
 	    if (lectura.ready()) {
@@ -29,11 +32,11 @@ public class EntradaTeclado implements InterfaceEjecuta {
 		lectura.read(buffer_de_lectura);
 
 		Salida = new String(buffer_de_lectura);
-		// System.out.println(Salida);
+		
 
 	    }
 	} catch (IOException e) {
-	    // TODO Auto-generated catch block
+	    
 	    e.printStackTrace();
 	} finally {
 
@@ -41,13 +44,7 @@ public class EntradaTeclado implements InterfaceEjecuta {
 	return Salida;
     }
 
-    /**
-     * devuelve un StringTokenizer con los datos del fichero dado.
-     * 
-     * @param fichero
-     * @return
-     */
-
+   
     @Override
     public void ejecuta() {
 	leer();

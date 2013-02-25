@@ -64,11 +64,11 @@ public class Principal {
 		0.6858);
 	InterfaceEjecuta reloj = new Reloj();
 	InterfaceEjecuta ciclista1 = new Ciclista((Bicicleta) bici1);
-	// InterfaceEjecuta parser = new Parser(ciclista1);
-
+	
 	SuperLectura Lectura = new SuperLectura();
 	EntradaTeclado entrada_de_datos_por_teclado = new EntradaTeclado(
 		Lectura.CrearLectorPorTeclado());
+	InterfaceEjecuta parser = new Parser(entrada_de_datos_por_teclado);
 
 	listaejecuta.add(ciclista1);
 	listaejecuta.add(reloj);
@@ -91,8 +91,8 @@ public class Principal {
 			 // del programa
 	EntradaFichero entrada = new EntradaFichero();
 
-	MiMapaDosListas<Double, Double> mapa = new MiMapaDosListas<Double, Double>(
-		entrada.cargarFicheroEnStringTokenizer("carretera.txt"));
+	//MiMapaDosListas<Double, Double> mapa = new MiMapaDosListas<Double, Double>(
+	//	entrada.cargarFicheroEnStringTokenizer("carretera.txt"));
 
 	while (contador < limite) {
 
@@ -106,7 +106,7 @@ public class Principal {
 		// mapa.getElementoLista1();
 		// mapa.getElementoLista2(contador);
 		// System.out.println()
-
+/*
 		for (Object c : listasalida) {
 
 		    ((InterfaceSalida) c).muestra();

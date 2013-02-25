@@ -23,10 +23,10 @@ public class Parser implements InterfaceEjecuta {
     InterfazInstruccion instruccion;
     Object objeto;
 
-    public Parser(Object obj) {
+    public Parser(EntradaTeclado input) {
 
-	objeto = obj;
-	// entrada = new EntradaTeclado(new InputStreamReader(System.in));
+	lectura=input;
+	
     }
 
     public InterfazInstruccion DameComando(String comando) {

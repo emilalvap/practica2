@@ -35,8 +35,7 @@ public class EntradaFichero {
      * @param textoConTokens
      * @return
      */
-    private double[] devuelveMatrizDeStringTokenizer(
-	    StringTokenizer textoConTokens) {
+    private double[] devuelveMatrizDeStringTokenizer(StringTokenizer textoConTokens) {
 	double[] array = new double[textoConTokens.countTokens()];
 	int i = 0;
 	while (textoConTokens.hasMoreElements()) {
@@ -47,8 +46,7 @@ public class EntradaFichero {
 	return array;
     }
 
-    public StringTokenizer cargarFicheroEnStringTokenizer(String fichero,
-	    String delimitadores) {
+    public StringTokenizer cargarFicheroEnStringTokenizer(String fichero) {
 
 	String contenidoficherocontokens = new String();
 
