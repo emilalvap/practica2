@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 import entradaDeDatos.EntradaFichero;
-public class MiMapaDosListas <T,E> 
+public class MiMapa <T,E> 
 {
     
     Map<T,E> mapa;
@@ -17,7 +17,7 @@ public class MiMapaDosListas <T,E>
      * constructor de MiMapa, el cual genera un mapa dado un StringTokenizer
      * @param tokens
      */
-    public  MiMapaDosListas(StringTokenizer tokens)
+    public  MiMapa(StringTokenizer tokens)
     {
 	//F[] matriz = fichero.convertirAArrayFichero("carretera.txt");
 	

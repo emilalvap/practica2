@@ -14,7 +14,7 @@ import entradaDeDatos.EntradaTeclado;
  * @author usuario_local
  * 
  */
-public class Parser implements InterfaceEjecuta 
+public class Parser extends EntradaTeclado implements InterfaceEjecuta 
 {
 
     /*

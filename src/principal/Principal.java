@@ -17,7 +17,7 @@ import tiempo.Reloj;
 import bicicleta.Bicicleta;
 import java.util.*;
 
-import mapas.MiMapaDosListas;
+import mapas.MiMapa;
 import comandos.InterfazInstruccion;
 /*
 import comandos.Comandos;
@@ -88,7 +88,7 @@ public class Principal {
 	int limite = 60; // Se establecera el limite en SEGUNDOS de la ejecucion
 			 // del programa
 	EntradaFichero entrada = new EntradaFichero();
-	MiMapaDosListas<Double,Double> mapa = new MiMapaDosListas<Double,Double>
+	MiMapa<Double,Double> mapa = new MiMapa<Double,Double>
 	(entrada.cargarFicheroEnStringTokenizer("carretera.txt",":;"));
 	
 
@@ -106,11 +106,7 @@ public class Principal {
 	    {
 		((InterfaceSalida) c).muestra();
 	    }
-	  
-	    /*
-	    orden = Parsercomandos.DameComando(entrada_de_datos_por_teclado
-		    .leer());
-		    */
+	
 	    contador++;
 	}
     }
